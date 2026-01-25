@@ -1,55 +1,3 @@
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//---------------------------¿Ø¿«ªÁ«◊------------------------------ 
-//
-//    ∞‘¿”√¢¿ª ¿¸√º»≠∏È «œ¡ˆ ∏∂ººø‰  
-//    CapsLock¿Ã ≤®¡Æ¿÷¥¬¡ˆ »Æ¿Œ«œººø‰  
-//
-//    ∞‘¿”¡°ºˆ∏¶ ¿˙¿Â«“ ∂ß ∫Œ¿˚¿˝«— ¥‹æÓ∏¶ ∆˜«‘«œ¡ˆ ∏∂ººø‰  
-//    ±‚∑œ¿ª ¿˙¿Â«œ∞Ì ∞‘¿”√¢¿ª ≥™∞°∞≈≥™ æ∆π´ ≈∞∏¶ ¥≠∑Ø ¡æ∑·«’¥œ¥Ÿ  
-//
-//    Cƒ⁄µÂ∏¶ ºˆ¡§«œ¡ˆ∏∂ººø‰.
-//    (∏∏¿œ ºˆ¡§«œø¥¥Ÿ∏È, Ctrl+Z ∏¶ ∞Ëº” ¥≠∑Ø µ«µπ∏Æººø‰) 
-//
-//-----------------------------------------------------------------
-//
-//-----------------------±««—¿⁄ ¿Ø¿«ªÁ«◊---------------------------
-//
-//    ∞‘¿”¿Ã Ω««‡¿Ã µ«¡ˆ æ ¥¬¥Ÿ∏È ∞‘¿”¡¶¿€¿⁄∏¶ ∫Œ∏£ººø‰  
-//
-//    √≥¿Ω ∆ƒ¿œ¿ª ø≠ ∂ß 'µµ±∏(T) -> ƒƒ∆ƒ¿œ∑Ø º≥¡§(C) - >
-//    ƒƒ∆ƒ¿œ∑Ø √ﬂ∞° ∏Ì∑… ªÁøÎ -> " -std=c++14 " ¿‘∑¬
-//
-//    ∫Œ¿˚¿˝«— ¥–≥◊¿”¿Ã ¡°ºˆ√¢ø° ¿÷¥Ÿ∏È ∞‘¿”¡¶¿€¿⁄∏¶ ∫Œ∏£ººø‰  
-//
-//-----------------------------------------------------------------
-//
-//
-//                'F10'¿ª ¥≠∑Ø ∞‘¿”¿ª Ω√¿€«’¥œ¥Ÿ. 
-//
-//     
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -129,25 +77,25 @@ int bomb_fallscore_not_remove=0;
 int chain_x[20]={0,1,8,16,32,64,96,128,192,224,256,288,320,352,384,416,448,480,512};
 int commap[14][14];
 
-int puyocleared=1,allcleared=1,maxchain=1; //¿”Ω√º˝¿⁄ 
+int puyocleared=1,allcleared=1,maxchain=1; //ÏûÑÏãúÏà´Ïûê 
 int tact,wordlot;
 
-char code[8];      //ƒ⁄µÂ ¿‘∑¬ 
+char code[8];      //ÏΩîÎìú ÏûÖÎ†• 
 
-int limit=1;  //øÚ¡˜¿” ¡¶«— //¿”Ω√º˝¡ˆ  1
+int limit=1;  //ÏõÄÏßÅÏûÑ Ï†úÌïú //ÏûÑÏãúÏà´ÏßÄ  1
 
-int othertact[7];  //∑π¿Œ∫∏øÏ 
+int othertact[7];  //Î†àÏù∏Î≥¥Ïö∞ 
 
-int iceheight=12,icenum=1;   //¿”Ω√º˝¿⁄ 1 
+int iceheight=12,icenum=1;   //ÏûÑÏãúÏà´Ïûê 1 
 
 int sandwich_plus=1;
 
 char rev_mov[4]={'a','d','w','s'};
 
 int gravity;
-int gravity_use=1;//1=ªÁøÎæ»«‘  0=ªÁøÎ«‘  
+int gravity_use=1;//1=ÏÇ¨Ïö©ÏïàÌï®  0=ÏÇ¨Ïö©Ìï®  
 
-///////////////////////µµ¿¸∞˙¡¶ ∫Øºˆ
+///////////////////////ÎèÑÏ†ÑÍ≥ºÏ†ú Î≥ÄÏàò
  
 char dis_chall[1000][32];
 
@@ -463,7 +411,7 @@ char dis_chall_copy[1000][32]={
 }; 
 
 /////////////////////////////////////////////////////////////////////////
-void textcolor(int foreground, int background) //±€¿⁄ªˆ 
+void textcolor(int foreground, int background) //Í∏ÄÏûêÏÉâ 
 { 
 int color=foreground+background*16; 
 SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color); 
@@ -476,10 +424,10 @@ void Gotxy(int x, int y)          //gotxy
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),Pos);
 }
 
-void chall_say(){   //µµ¿¸∞˙¡¶ ¥ﬁº∫ «•Ω√ 
+void chall_say(){   //ÎèÑÏ†ÑÍ≥ºÏ†ú Îã¨ÏÑ± ÌëúÏãú 
 	chall_say_time=0;
 	
-	fout.open("challenge.txt");//µµ¿¸∞˙¡¶   
+	fout.open("challenge.txt");//ÎèÑÏ†ÑÍ≥ºÏ†ú   
 i=0;
 file_int=0;
 while(i<=11){
@@ -499,7 +447,7 @@ fout.close();
 	cout<<"Acheiving Challenge !!!";
 	Gotxy(17,22);
 	textcolor(LIGHTGREEN,BLACK);
-	cout<<"¢∫";
+	cout<<"‚ñ∂";
 
 	
 }
@@ -510,7 +458,7 @@ void namelegth(){
 	while(i<=1000){
 		if(name[i]!=' '){
 		wordlot+=1;
-		if(wordlot>12&&name[i]!=' ')        //√÷¥Î ±€¿⁄ºˆ 12 
+		if(wordlot>12&&name[i]!=' ')        //ÏµúÎåÄ Í∏ÄÏûêÏàò 12 
 		name[i]=' ';	
 		i+=1;
 		}
@@ -547,7 +495,7 @@ void file_read1(int file){
 fin>>file_input;
 Gotxy(9,2);
 textcolor(YELLOW,BLACK);
-printf("£± °Ÿ%s°Ÿ ",file_input);
+printf("Ôºë ‚òÜ%s‚òÜ ",file_input);
 textcolor(WHITE,BLACK);
 fin.close();
 	}
@@ -595,7 +543,7 @@ void file_read2(int file){
 fin>>file_input;
 Gotxy(11,2);
 textcolor(LIGHTGRAY,BLACK);
-printf("£≤ £™%s£™",file_input);
+printf("Ôºí Ôºä%sÔºä",file_input);
 textcolor(WHITE,BLACK);
 fin.close();
 	}
@@ -643,7 +591,7 @@ void file_read3(int file){
 fin>>file_input;
 Gotxy(13,2);
 textcolor(BROWN,BLACK);
-printf("£≥ %s",file_input);
+printf("Ôºì %s",file_input);
 textcolor(WHITE,BLACK);
 fin.close();
 	}
@@ -690,7 +638,7 @@ void file_read4(int file){
 fin>>file_input;
 Gotxy(15,2);
 textcolor(WHITE,BLACK);
-printf("£¥ %s",file_input);
+printf("Ôºî %s",file_input);
 fin.close();
 	}
 	else if(file==2){
@@ -736,7 +684,7 @@ void file_read5(int file){
 fin>>file_input;
 Gotxy(17,2);
 textcolor(WHITE,BLACK);
-printf("£µ %s",file_input);
+printf("Ôºï %s",file_input);
 fin.close();
 	}
 	else if(file==2){
@@ -782,7 +730,7 @@ void file_read6(int file){
 fin>>file_input;
 Gotxy(9,2);
 textcolor(YELLOW,BLACK);
-printf("£± °Ÿ%s°Ÿ ",file_input);
+printf("Ôºë ‚òÜ%s‚òÜ ",file_input);
 textcolor(WHITE,BLACK);
 fin.close();
 	}
@@ -830,7 +778,7 @@ void file_read7(int file){
 fin>>file_input;
 Gotxy(11,2);
 textcolor(LIGHTGRAY,BLACK);
-printf("£≤ £™%s£™",file_input);
+printf("Ôºí Ôºä%sÔºä",file_input);
 textcolor(WHITE,BLACK);
 fin.close();
 	}
@@ -878,7 +826,7 @@ void file_read8(int file){
 fin>>file_input;
 Gotxy(13,2);
 textcolor(BROWN,BLACK);
-printf("£≥ %s",file_input);
+printf("Ôºì %s",file_input);
 textcolor(WHITE,BLACK);
 fin.close();
 	}
@@ -925,7 +873,7 @@ void file_read9(int file){
 fin>>file_input;
 Gotxy(15,2);
 textcolor(WHITE,BLACK);
-printf("£¥ %s",file_input);
+printf("Ôºî %s",file_input);
 fin.close();
 	}
 	else if(file==2){
@@ -971,7 +919,7 @@ void file_read10(int file){
 fin>>file_input;
 Gotxy(17,2);
 textcolor(WHITE,BLACK);
-printf("£µ %s",file_input);
+printf("Ôºï %s",file_input);
 fin.close();
 	}
 	else if(file==2){
@@ -1017,7 +965,7 @@ void file_read11(int file){
 fin>>file_input;
 Gotxy(9,2);
 textcolor(YELLOW,BLACK);
-printf("£± °Ÿ%s°Ÿ ",file_input);
+printf("Ôºë ‚òÜ%s‚òÜ ",file_input);
 textcolor(WHITE,BLACK);
 fin.close();
 	}
@@ -1065,7 +1013,7 @@ void file_read12(int file){
 fin>>file_input;
 Gotxy(11,2);
 textcolor(LIGHTGRAY,BLACK);
-printf("£≤ £™%s£™",file_input);
+printf("Ôºí Ôºä%sÔºä",file_input);
 textcolor(WHITE,BLACK);
 fin.close();
 	}
@@ -1113,7 +1061,7 @@ void file_read13(int file){
 fin>>file_input;
 Gotxy(13,2);
 textcolor(BROWN,BLACK);
-printf("£≥ %s",file_input);
+printf("Ôºì %s",file_input);
 textcolor(WHITE,BLACK);
 fin.close();
 	}
@@ -1160,7 +1108,7 @@ void file_read14(int file){
 fin>>file_input;
 Gotxy(15,2);
 textcolor(WHITE,BLACK);
-printf("£¥ %s",file_input);
+printf("Ôºî %s",file_input);
 fin.close();
 	}
 	else if(file==2){
@@ -1206,7 +1154,7 @@ void file_read15(int file){
 fin>>file_input;
 Gotxy(17,2);
 textcolor(WHITE,BLACK);
-printf("£µ %s",file_input);
+printf("Ôºï %s",file_input);
 fin.close();
 	}
 	else if(file==2){
@@ -1250,21 +1198,21 @@ fin.close();
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
-void puyo(){       //ª—ø‰ª—ø‰ ∏„ º≥¡§ø° µ˚∏• ∫Ì∑∞ º≥¡§ 
+void puyo(){       //ÎøåÏöîÎøåÏöî Î©• ÏÑ§Ï†ïÏóê Îî∞Î•∏ Î∏îÎü≠ ÏÑ§Ï†ï 
 	i=0;
 	j=0;
 while(i<=24){
 	while(j<=13){
-		if(map[i][j]==1&&j>0&&i<18&&i>=2){                   //√ ∑œ  
+		if(map[i][j]==1&&j>0&&i<18&&i>=2){                   //Ï¥àÎ°ù  
 			textcolor(LIGHTGREEN,BLACK);
 			Gotxy(j,i);
 			if(option[1]!=1&&option[0]!=1)
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	        if(option[1]==1)
-	cout <<"°€"<<endl;                   //πˆ∫Ì  
+	cout <<"‚óã"<<endl;                   //Î≤ÑÎ∏î  
 	if(option[0]==1){
 	textcolor(CYAN,BLACK);
-	cout <<"°⁄"<<endl;              //speed
+	cout <<"‚òÖ"<<endl;              //speed
 }
 	textcolor(WHITE,BLACK);
 		}
@@ -1272,10 +1220,10 @@ while(i<=24){
 			textcolor(LIGHTGREEN,BLACK);
 			Gotxy(j,i);
 			if(option[0]!=1)
-	cout <<"¢ƒ"<<endl;
+	cout <<"‚óê"<<endl;
 	if(option[0]==1){
 	textcolor(CYAN,BLACK);
-	cout <<"°Ÿ"<<endl;              //speed
+	cout <<"‚òÜ"<<endl;              //speed
 }
 	textcolor(WHITE,BLACK);
 		}
@@ -1284,22 +1232,22 @@ while(i<=24){
 			if(option[0]==1)
 	textcolor(CYAN,BLACK);
 			Gotxy(j,i);
-	cout <<"§˝"<<endl;
+	cout <<"„Üç"<<endl;
 	textcolor(WHITE,BLACK);
 		}
-	    if(map[i][j]==2&&j>0&&i<18&&i>=2){                   //∆ƒ∂˚ 
+	    if(map[i][j]==2&&j>0&&i<18&&i>=2){                   //ÌååÎûë 
 			if(option[8]!=1)
 			textcolor(BLUE,BLACK);
 			else if(option[8]==1)
-			textcolor(LIGHTRED,BLACK);  //ª˜µÂ¿ßƒ°  
+			textcolor(LIGHTRED,BLACK);  //ÏÉåÎìúÏúÑÏπò  
 			Gotxy(j,i);
 			if(option[1]!=1&&option[0]!=1)
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	if(option[1]==1)
-	cout <<"°€"<<endl;            //πˆ∫Ì 
+	cout <<"‚óã"<<endl;            //Î≤ÑÎ∏î 
 	if(option[0]==1){
 	textcolor(WHITE,BLACK);
-	cout <<"°⁄"<<endl;       //speed
+	cout <<"‚òÖ"<<endl;       //speed
 	}
 	textcolor(WHITE,BLACK);
 		}
@@ -1307,13 +1255,13 @@ while(i<=24){
 			if(option[8]!=1)
 			textcolor(BLUE,BLACK);
 			else if(option[8]==1)
-			textcolor(LIGHTRED,BLACK);  //ª˜µÂ¿ßƒ°  
+			textcolor(LIGHTRED,BLACK);  //ÏÉåÎìúÏúÑÏπò  
 			Gotxy(j,i);
 	if(option[0]!=1)		
-	cout <<"¢ƒ"<<endl;
+	cout <<"‚óê"<<endl;
 	if(option[0]==1){
 	textcolor(WHITE,BLACK);
-	cout <<"°Ÿ"<<endl; 	
+	cout <<"‚òÜ"<<endl; 	
 	}	             //speed
 	textcolor(WHITE,BLACK);
 		}
@@ -1321,23 +1269,23 @@ while(i<=24){
 			if(option[8]!=1)
 			textcolor(BLUE,BLACK);
 			else if(option[8]==1)
-			textcolor(LIGHTRED,BLACK);  //ª˜µÂ¿ßƒ°  
+			textcolor(LIGHTRED,BLACK);  //ÏÉåÎìúÏúÑÏπò  
 			if(option[0]==1)
 	textcolor(WHITE,BLACK);
 			Gotxy(j,i);
-	cout <<"§˝"<<endl;
+	cout <<"„Üç"<<endl;
 	textcolor(WHITE,BLACK);
 		}
-		if(map[i][j]==3&&j>0&&i<18&&i>=2){                   //ª°∞≠ 
+		if(map[i][j]==3&&j>0&&i<18&&i>=2){                   //Îπ®Í∞ï 
 			textcolor(RED,BLACK);
 			Gotxy(j,i);
 			if(option[1]!=1&&option[0]!=1)
-	cout <<"°‹"<<endl;
-	if(option[1]==1)            //πˆ∫Ì 
-	cout <<"°€"<<endl;
+	cout <<"‚óè"<<endl;
+	if(option[1]==1)            //Î≤ÑÎ∏î 
+	cout <<"‚óã"<<endl;
 	else if(option[0]==1){
 	textcolor(BROWN,BLACK);
-	cout <<"°⁄"<<endl;              //speed
+	cout <<"‚òÖ"<<endl;              //speed
 	textcolor(WHITE,BLACK);
 }
 		}
@@ -1345,10 +1293,10 @@ while(i<=24){
 			textcolor(RED,BLACK);
 			Gotxy(j,i);
 	if(option[0]!=1)		
-	cout <<"¢ƒ"<<endl;
+	cout <<"‚óê"<<endl;
 	if(option[0]==1){
 	textcolor(BROWN,BLACK);
-	cout <<"°Ÿ"<<endl; 
+	cout <<"‚òÜ"<<endl; 
 	textcolor(WHITE,BLACK);
 		}
 	}
@@ -1358,19 +1306,19 @@ while(i<=24){
 	if(option[0]==1)
 	textcolor(BROWN,BLACK);
 			Gotxy(j,i);
-	cout <<"§˝"<<endl;
+	cout <<"„Üç"<<endl;
 	textcolor(WHITE,BLACK);
 		}
-		if(map[i][j]==4&&j>0&&i<18&&i>=2){                   //≥Î∂˚  
+		if(map[i][j]==4&&j>0&&i<18&&i>=2){                   //ÎÖ∏Îûë  
 			textcolor(BROWN,BLACK);
 			Gotxy(j,i);
 			if(option[1]!=1&&option[0]!=1)
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	if(option[1]==1)
-	cout <<"°€"<<endl;            //πˆ∫Ì 
+	cout <<"‚óã"<<endl;            //Î≤ÑÎ∏î 
 	else if(option[0]==1){
 	textcolor(LIGHTRED,BLACK);
-	cout <<"°⁄"<<endl;              //speed
+	cout <<"‚òÖ"<<endl;              //speed
 	textcolor(WHITE,BLACK);
 }
 		}
@@ -1378,10 +1326,10 @@ while(i<=24){
 			textcolor(BROWN,BLACK);
 			Gotxy(j,i);
 	if(option[0]!=1)		
-	cout <<"¢ƒ"<<endl;
+	cout <<"‚óê"<<endl;
 	if(option[0]==1){
 	textcolor(LIGHTRED,BLACK);
-	cout <<"°Ÿ"<<endl; 
+	cout <<"‚òÜ"<<endl; 
 }
 	textcolor(WHITE,BLACK);
 		}	
@@ -1391,17 +1339,17 @@ while(i<=24){
 	if(option[0]==1)
 	textcolor(LIGHTRED,BLACK);
 			Gotxy(j,i);
-	cout <<"§˝"<<endl;
+	cout <<"„Üç"<<endl;
 	textcolor(WHITE,BLACK);
 		}
-		if(map[i][j]==5&&j>0&&i<18&&i>=2){                   //∫∏∂Û  
+		if(map[i][j]==5&&j>0&&i<18&&i>=2){                   //Î≥¥Îùº  
 			textcolor(MAGENTA,BLACK);
 			Gotxy(j,i);
 			if(option[1]!=1)
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	if(option[1]==1){
 	textcolor(LIGHTGRAY,BLACK);
-	cout <<"¢¡"<<endl;
+	cout <<"‚äô"<<endl;
 }
 	textcolor(WHITE,BLACK);
 		}
@@ -1409,12 +1357,12 @@ while(i<=24){
 			if(option[1]!=1){
 				textcolor(MAGENTA,BLACK);
 				Gotxy(j,i);
-	cout <<"¢ƒ"<<endl;
+	cout <<"‚óê"<<endl;
 			}
 	if(option[1]==1){
 	textcolor(LIGHTGRAY,BLACK);			
 			Gotxy(j,i);
-	cout <<"¢¡"<<endl;
+	cout <<"‚äô"<<endl;
 }
 	textcolor(WHITE,BLACK);
 		}	
@@ -1425,55 +1373,55 @@ while(i<=24){
 	textcolor(LIGHTGRAY,BLACK);
 }
 			Gotxy(j,i);
-	cout <<"§˝"<<endl;
+	cout <<"„Üç"<<endl;
 	textcolor(WHITE,BLACK);
 		}
-		if(map[i][j]==6&&j>0&&i<18&&i>=2){                   //∑π¿Œ∫∏øÏ  
+		if(map[i][j]==6&&j>0&&i<18&&i>=2){                   //Î†àÏù∏Î≥¥Ïö∞  
 			textcolor(LIGHTMAGENTA,BLACK);
 			Gotxy(j,i);
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	textcolor(WHITE,BLACK);
 		}
 		else if(map[i][j]==6&&j>0&&i>=18){
 			textcolor(LIGHTMAGENTA,BLACK);
 			Gotxy(j,i);
-	cout <<"¢ƒ"<<endl;
+	cout <<"‚óê"<<endl;
 	textcolor(WHITE,BLACK);
 		}	
 		else if(map[i][j]==6+BLOCK&&j>=0&&i<=15){
 			textcolor(MAGENTA,BLACK);
 			Gotxy(j,i);
-	cout <<"§˝"<<endl;
+	cout <<"„Üç"<<endl;
 	textcolor(WHITE,BLACK);
 		}
 		
-		if(map[i][j]==7&&j>0&&i<18&&i>=2){                   //∑π¿Œ∫∏øÏ  
+		if(map[i][j]==7&&j>0&&i<18&&i>=2){                   //Î†àÏù∏Î≥¥Ïö∞  
 			textcolor(CYAN,BLACK);
 			Gotxy(j,i);
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	textcolor(WHITE,BLACK);
 		}
 		else if(map[i][j]==7&&j>0&&i>=18){
 			textcolor(CYAN,BLACK);
 			Gotxy(j,i);
-	cout <<"¢ƒ"<<endl;
+	cout <<"‚óê"<<endl;
 	textcolor(WHITE,BLACK);
 		}	
 		else if(map[i][j]==7+BLOCK&&j>=0&&i<=15){
 			textcolor(CYAN,BLACK);
 			Gotxy(j,i);
-	cout <<"§˝"<<endl;
+	cout <<"„Üç"<<endl;
 	textcolor(WHITE,BLACK);
-		}                                              //∑π¿Œ∫∏øÏ 
+		}                                              //Î†àÏù∏Î≥¥Ïö∞ 
 		
 		if(map[i][j]==100){
 			if(rev_mov[0]=='a'&&option[8]!=1)
 	textcolor(BLACK,LIGHTBLUE);           //reverse 
 	else if(rev_mov[0]=='d')
 	textcolor(BLACK,BROWN);
-	else if(option[8]==1&&sandwich_plus!=1)   //ª˜µÂ¿ßƒ°  
+	else if(option[8]==1&&sandwich_plus!=1)   //ÏÉåÎìúÏúÑÏπò  
 	textcolor(BLACK,LIGHTMAGENTA);
-	else if(option[8]==1&&sandwich_plus==1)   //ª˜µÂ¿ßƒ°  
+	else if(option[8]==1&&sandwich_plus==1)   //ÏÉåÎìúÏúÑÏπò  
 	textcolor(BLACK,LIGHTBLUE);
 			Gotxy(j,i);
 	cout <<" "<<endl;
@@ -1496,117 +1444,117 @@ while(i<=24){
 	textcolor(LIGHTBLUE,BLACK);           //reverse 
 	else if(rev_mov[0]=='d')
 	textcolor(BROWN,BLACK);
-	else if(option[8]==1&&sandwich_plus!=1)   //ª˜µÂ¿ßƒ°  
+	else if(option[8]==1&&sandwich_plus!=1)   //ÏÉåÎìúÏúÑÏπò  
 	textcolor(LIGHTMAGENTA,BLACK);
-	else if(option[8]==1&&sandwich_plus==1)   //ª˜µÂ¿ßƒ°  
+	else if(option[8]==1&&sandwich_plus==1)   //ÏÉåÎìúÏúÑÏπò  
 	textcolor(LIGHTBLUE,BLACK);
 			Gotxy(j,i);
-	cout <<"°·"<<endl;
+	cout <<"‚ñ†"<<endl;
 	textcolor(WHITE,BLACK);
 		}
 		
-		if(map[i][j]==30&&j>0&&i<18&&i>=2){                   //πÊ«ÿª—ø‰ 
+		if(map[i][j]==30&&j>0&&i<18&&i>=2){                   //Î∞©Ìï¥ÎøåÏöî 
 			textcolor(LIGHTGRAY,BLACK);
 			Gotxy(j,i);
-	cout <<"¢¡"<<endl;
+	cout <<"‚äô"<<endl;
 	textcolor(WHITE,BLACK);
 		}
-    if(map[6][1]==0&&i==6&&j==1){         //x«•Ω√  
+    if(map[6][1]==0&&i==6&&j==1){         //xÌëúÏãú  
 		Gotxy(1,6);
 	textcolor(RED,BLACK);
-	cout << "£ÿ" <<endl;
+	cout << "Ôº∏" <<endl;
 	textcolor(WHITE,BLACK);
 }
 
 if(option[7]==1){
-	if(map[i][j]==1001&&j>0&&i<18&&i>=2){                   //√ ∑œ       //æÛ¿Ω  
+	if(map[i][j]==1001&&j>0&&i<18&&i>=2){                   //Ï¥àÎ°ù       //ÏñºÏùå  
 			textcolor(LIGHTGREEN,CYAN);
 			Gotxy(j,i);
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	textcolor(WHITE,BLACK);
 		}
-	    if(map[i][j]==1002&&j>0&&i<18&&i>=2){                   //∆ƒ∂˚ 
+	    if(map[i][j]==1002&&j>0&&i<18&&i>=2){                   //ÌååÎûë 
 			textcolor(BLUE,CYAN);
 			Gotxy(j,i);
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	textcolor(WHITE,BLACK);
 		}
-		if(map[i][j]==1003&&j>0&&i<18&&i>=2){                   //ª°∞≠ 
+		if(map[i][j]==1003&&j>0&&i<18&&i>=2){                   //Îπ®Í∞ï 
 			textcolor(RED,CYAN);
 			Gotxy(j,i);
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	textcolor(WHITE,BLACK);
 		}
-		if(map[i][j]==1004&&j>0&&i<18&&i>=2){                   //≥Î∂˚  
+		if(map[i][j]==1004&&j>0&&i<18&&i>=2){                   //ÎÖ∏Îûë  
 			textcolor(BROWN,CYAN);
 			Gotxy(j,i);
 			if(option[1]!=1)
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	textcolor(WHITE,BLACK);
 		}
-		if(map[i][j]==1005&&j>0&&i<18&&i>=2){                   //∫∏∂Û  
+		if(map[i][j]==1005&&j>0&&i<18&&i>=2){                   //Î≥¥Îùº  
 			textcolor(MAGENTA,CYAN);
 			Gotxy(j,i);
-	cout <<"°‹"<<endl;
+	cout <<"‚óè"<<endl;
 	textcolor(WHITE,BLACK);
 		}
 } 
 
 
 
-	if(map[i][j]==50&&j>=0&&i<=15){                           //∆¯≈∫ 
+	if(map[i][j]==50&&j>=0&&i<=15){                           //Ìè≠ÌÉÑ 
 			textcolor(WHITE,BLACK);
 			Gotxy(j,i);
-	cout <<"®Î"<<endl;
+	cout <<"‚ë§"<<endl;
 	textcolor(WHITE,BLACK);
 		}
 	if(map[i][j]==51&&j>=0&&i<=15){
 			textcolor(WHITE,BLACK);
 			Gotxy(j,i);
-	cout <<"®Í"<<endl;
+	cout <<"‚ë£"<<endl;
 	textcolor(WHITE,BLACK);
 		}
 	if(map[i][j]==52&&j>=0&&i<=15){
 			textcolor(WHITE,BLACK);
 			Gotxy(j,i);
-	cout <<"®È"<<endl;
+	cout <<"‚ë¢"<<endl;
 	textcolor(WHITE,BLACK);
 		}
 	if(map[i][j]==53&&j>=0&&i<=15){
 			textcolor(WHITE,BLACK);
 			Gotxy(j,i);
-	cout <<"®Ë"<<endl;
+	cout <<"‚ë°"<<endl;
 	textcolor(WHITE,BLACK);
 		}
 	if(map[i][j]==54&&j>=0&&i<=15){
 			textcolor(WHITE,BLACK);
 			Gotxy(j,i);
-	cout <<"®Á"<<endl;
+	cout <<"‚ë†"<<endl;
 	textcolor(WHITE,BLACK);
 		}	
 	if(map[i][j]==55&&j>=0&&i<=15){
 			textcolor(WHITE,BLACK);
 			Gotxy(j,i);
-	cout <<"®€"<<endl;
+	cout <<"‚ìû"<<endl;
 	textcolor(WHITE,BLACK);
 		}
 		
-	if(map[i][j]==150&&j>=0&&i<=15&&option[8]==1){                           //ª˜µÂ¿ßƒ°  
+	if(map[i][j]==150&&j>=0&&i<=15&&option[8]==1){                           //ÏÉåÎìúÏúÑÏπò  
 			textcolor(BROWN,BLACK);
 			Gotxy(j,i);
-	cout <<"ﬂ≤"<<endl;
+	cout <<"‰∏â"<<endl;
 	textcolor(BROWN,BLACK);
 		}
-	if(map[i][j]==151&&j>=0&&i<=15&&option[8]==1){                           //ª˜µÂ¿ßƒ°  
+	if(map[i][j]==151&&j>=0&&i<=15&&option[8]==1){                           //ÏÉåÎìúÏúÑÏπò  
 			textcolor(BROWN,BLACK);
 			Gotxy(j,i);
-	cout <<"Ï£"<<endl;
+	cout <<"‰∫å"<<endl;
 	textcolor(BROWN,BLACK);
 		}
-	if(map[i][j]==152&&j>=0&&i<=15&&option[8]==1){                           //ª˜µÂ¿ßƒ°  
+	if(map[i][j]==152&&j>=0&&i<=15&&option[8]==1){                           //ÏÉåÎìúÏúÑÏπò  
 			textcolor(BROWN,BLACK);
 			Gotxy(j,i);
-	cout <<"ÏÈ"<<endl;
+	cout <<"‰∏Ä"<<endl;
 	textcolor(BROWN,BLACK);
 		}		
 						
@@ -1617,10 +1565,10 @@ if(option[7]==1){
 	i+=1;
 }
 ////////////////////////////////
-tact=0;       //≈Õ¡¸ ∞®¡ˆ ªÛºˆ tact
+tact=0;       //ÌÑ∞Ïßê Í∞êÏßÄ ÏÉÅÏàò tact
 i=0;
 	j=0;
-while(i<=24){        //∞®¡ˆ 
+while(i<=24){        //Í∞êÏßÄ 
 	while(j<=13){
 		if(map[i][j]==20){
 			tact+=1;
@@ -1630,7 +1578,7 @@ j+=1;
 	j=0;
 	i+=1;
 }
-if(tact>=1){        //∞®¡ˆ∞° µ∆¿ª ∂ß 
+if(tact>=1){        //Í∞êÏßÄÍ∞Ä ÎêêÏùÑ Îïå 
 	i=0;
 	j=0;
 while(i<=24){
@@ -1639,11 +1587,11 @@ if(map[i][j]==20){
 			textcolor(WHITE,BLACK);
 			Gotxy(j,i);
 			if(option[1]!=1&&option[0]!=1)
-	cout <<"°ÿ"<<endl;            //πˆ∫Ì
+	cout <<"‚Äª"<<endl;            //Î≤ÑÎ∏î
 	if(option[1]==1)
-	cout <<"°›"<<endl;
+	cout <<"‚óé"<<endl;
 	if(option[0]==1)        //speed
-	cout <<"°Ÿ"<<endl;
+	cout <<"‚òÜ"<<endl;
 	if(option[1]!=1&&option[0]!=1)
 	map[i][j]+=1;
 	if(option[1]==1)
@@ -1656,7 +1604,7 @@ if(map[i][j]==20){
 	j=0;
 	i+=1;
 }
-if(option[1]!=1&&option[0]!=1){            //πˆ∫Ì 
+if(option[1]!=1&&option[0]!=1){            //Î≤ÑÎ∏î 
 	Sleep(puyoclearspeed);	     // Basic : 150
 i=0;
 	j=0;
@@ -1682,7 +1630,7 @@ if(map[i][j]==22){
 			textcolor(LIGHTGRAY,BLACK);
 			Gotxy(j,i);
 	if(option[0]!=1)		
-	cout <<"°ÿ"<<endl;
+	cout <<"‚Äª"<<endl;
 	map[i][j]+=1;
 		}
 	j+=1;
@@ -1710,7 +1658,7 @@ if(map[i][j]==23){
 }
 
 tact=0;
-}                      //∞®¡ˆ ¡æ∑· 
+}                      //Í∞êÏßÄ Ï¢ÖÎ£å 
 
 }
 
@@ -1734,10 +1682,10 @@ void blockbreak(){
 	
 	i=0;
 	j=0;
-	while(i<=14){      //æÛ¿Ω∏µÂ∏¶ ¿ß«ÿº≠ map¿∏∑Œ ∫Ò±≥«œ¥¯ ∞Õ¿ª balmap¿∏∑Œ ¥ÎΩ≈ ∫Ò±≥  
+	while(i<=14){      //ÏñºÏùåÎ™®ÎìúÎ•º ÏúÑÌï¥ÏÑú mapÏúºÎ°ú ÎπÑÍµêÌïòÎçò Í≤ÉÏùÑ balmapÏúºÎ°ú ÎåÄÏã† ÎπÑÍµê  
 		while(j<=14){
 			balmap[i][j]=map[i][j];
-			if(balmap[i][j]>=1001&&option[7]==1) // ¿Ã ¡ˆ¡°  
+			if(balmap[i][j]>=1001&&option[7]==1) // Ïù¥ ÏßÄÏ†ê  
 			balmap[i][j]-=1000;
 			j+=1;
 		}
@@ -1751,43 +1699,43 @@ while(i<=16){
 	while(j<=14){
 		if(option[1]!=1){
 			if(balmap[i][j]>=1&&balmap[i][j]<=7){
- if(balmap[i][j]==balmap[i][j+1]&&balmap[i][j+1]==balmap[i][j+2]&&balmap[i][j+2]==balmap[i][j+3]) {    // ∞°∑Œ 
+ if(balmap[i][j]==balmap[i][j+1]&&balmap[i][j+1]==balmap[i][j+2]&&balmap[i][j+2]==balmap[i][j+3]) {    // Í∞ÄÎ°ú 
 	commap[i][j]=1;
 	commap[i][j+1]=1;
 	commap[i][j+2]=1;
 	commap[i][j+3]=1;
 }	
-       else if(balmap[i][j]==balmap[i+2][j]&&balmap[i][j]==balmap[i+4][j]&&balmap[i][j]==balmap[i+6][j]) {    // ºº∑Œ  
+       else if(balmap[i][j]==balmap[i+2][j]&&balmap[i][j]==balmap[i+4][j]&&balmap[i][j]==balmap[i+6][j]) {    // ÏÑ∏Î°ú  
 	commap[i][j]=1;
 	commap[i+2][j]=1;
 	commap[i+4][j]=1;
 	commap[i+6][j]=1;
 }
-       else if(balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i+2][j]&&balmap[i][j]==balmap[i+2][j+1]) {    // ≥◊∏  
+       else if(balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i+2][j]&&balmap[i][j]==balmap[i+2][j+1]) {    // ÎÑ§Î™®  
 	commap[i][j]=1;
 	commap[i+2][j]=1;
 	commap[i][j+1]=1;
 	commap[i+2][j+1]=1;
 }		
-else if(balmap[i][j]==balmap[i+2][j+1]&&balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i-2][j+1]) {    // §«
+else if(balmap[i][j]==balmap[i+2][j+1]&&balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i-2][j+1]) {    // „Öó
 	commap[i][j]=1;
 	commap[i+2][j+1]=1;
 	commap[i][j+1]=1;
 	commap[i-2][j+1]=1;
 }
-else if(balmap[i][j]==balmap[i+2][j+1]&&balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i][j+2]) {    // §ø  
+else if(balmap[i][j]==balmap[i+2][j+1]&&balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i][j+2]) {    // „Öè  
 	commap[i][j]=1;
 	commap[i+2][j+1]=1;
 	commap[i][j+1]=1;
 	commap[i][j+2]=1;
 }
-else if(balmap[i][j]==balmap[i-2][j+1]&&balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i][j+2]) {    // §√  
+else if(balmap[i][j]==balmap[i-2][j+1]&&balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i][j+2]) {    // „Öì  
 	commap[i][j]=1;
 	commap[i-2][j+1]=1;
 	commap[i][j+1]=1;
 	commap[i][j+2]=1;
 }
-else if(balmap[i][j]==balmap[i+2][j]&&balmap[i][j]==balmap[i+2][j+1]&&balmap[i][j]==balmap[i+4][j]) {    // §Ã 
+else if(balmap[i][j]==balmap[i+2][j]&&balmap[i][j]==balmap[i+2][j+1]&&balmap[i][j]==balmap[i+4][j]) {    // „Öú 
 	commap[i][j]=1;
 	commap[i+2][j]=1;
 	commap[i+2][j+1]=1;
@@ -1817,25 +1765,25 @@ else if(balmap[i][j]==balmap[i-2][j]&&balmap[i][j]==balmap[i-2][j-1]&&balmap[i][
 	commap[i-2][j-1]=1;
 	commap[i-2][j-2]=1;
 }
-else if(balmap[i][j]==balmap[i+2][j]&&balmap[i][j]==balmap[i+4][j]&&balmap[i][j]==balmap[i+4][j+1]) {    // §°1 
+else if(balmap[i][j]==balmap[i+2][j]&&balmap[i][j]==balmap[i+4][j]&&balmap[i][j]==balmap[i+4][j+1]) {    // „Ñ±1 
 	commap[i][j]=1;
 	commap[i+2][j]=1;
 	commap[i+4][j]=1;
 	commap[i+4][j+1]=1;
 }
-else if(balmap[i][j]==balmap[i+2][j]&&balmap[i][j]==balmap[i+4][j]&&balmap[i][j]==balmap[i][j+1]) {    // §°2 
+else if(balmap[i][j]==balmap[i+2][j]&&balmap[i][j]==balmap[i+4][j]&&balmap[i][j]==balmap[i][j+1]) {    // „Ñ±2 
 	commap[i][j]=1;
 	commap[i+2][j]=1;
 	commap[i+4][j]=1;
 	commap[i][j+1]=1;
 }
-else if(balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i+2][j+1]&&balmap[i][j]==balmap[i+4][j+1]) {    // §§1 
+else if(balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i+2][j+1]&&balmap[i][j]==balmap[i+4][j+1]) {    // „Ñ¥1 
 	commap[i][j]=1;
 	commap[i][j+1]=1;
 	commap[i+2][j+1]=1;
 	commap[i+4][j+1]=1;
 }
-else if(balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i-2][j+1]&&balmap[i][j]==balmap[i-4][j+1]) {    // §§2 
+else if(balmap[i][j]==balmap[i][j+1]&&balmap[i][j]==balmap[i-2][j+1]&&balmap[i][j]==balmap[i-4][j+1]) {    // „Ñ¥2 
 	commap[i][j]=1;
 	commap[i][j+1]=1;
 	commap[i-2][j+1]=1;
@@ -1867,34 +1815,34 @@ else if(balmap[i][j]==balmap[i][j-1]&&balmap[i][j]==balmap[i+2][j-1]&&balmap[i][
 }
 		}
 	}
-	else if(option[1]==1){            //πˆ∫Ì 
-		if(map[i][j]==1||map[i][j]==2||map[i][j]==3||map[i][j]==4){   //≥≠¿Ãµµ æÓ∑¡øÚ ¿œãö '5'¥¬ ¡¶ø‹ (πÊ«ÿª—ø‰)  
-		if(map[i][j]==map[i][j+1]&&map[i][j+1]==map[i][j+2]) {    // ∞°∑Œ 
+	else if(option[1]==1){            //Î≤ÑÎ∏î 
+		if(map[i][j]==1||map[i][j]==2||map[i][j]==3||map[i][j]==4){   //ÎÇúÏù¥ÎèÑ Ïñ¥Î†§ÏõÄ Ïùº¬ã¬ö '5'Îäî Ï†úÏô∏ (Î∞©Ìï¥ÎøåÏöî)  
+		if(map[i][j]==map[i][j+1]&&map[i][j+1]==map[i][j+2]) {    // Í∞ÄÎ°ú 
 	commap[i][j]=1;
 	commap[i][j+1]=1;
 	commap[i][j+2]=1;
 }
-else if(map[i][j]==map[i+2][j]&&map[i][j]==map[i+4][j]) {    // ºº∑Œ  
+else if(map[i][j]==map[i+2][j]&&map[i][j]==map[i+4][j]) {    // ÏÑ∏Î°ú  
 	commap[i][j]=1;
 	commap[i+2][j]=1;
 	commap[i+4][j]=1;
 }
-else if(map[i][j]==map[i+2][j]&&map[i][j]==map[i+2][j+1]) {    // §°1  
+else if(map[i][j]==map[i+2][j]&&map[i][j]==map[i+2][j+1]) {    // „Ñ±1  
 	commap[i][j]=1;
 	commap[i+2][j]=1;
 	commap[i+2][j+1]=1;
 }
-else if(map[i][j]==map[i+2][j]&&map[i][j]==map[i][j+1]) {    // §°2  
+else if(map[i][j]==map[i+2][j]&&map[i][j]==map[i][j+1]) {    // „Ñ±2  
 	commap[i][j]=1;
 	commap[i+2][j]=1;
 	commap[i][j+1]=1;
 }
-else if(map[i][j]==map[i][j+1]&&map[i][j]==map[i+2][j+1]) {    // §§1  
+else if(map[i][j]==map[i][j+1]&&map[i][j]==map[i+2][j+1]) {    // „Ñ¥1  
 	commap[i][j]=1;
 	commap[i][j+1]=1;
 	commap[i+2][j+1]=1;
 }
-else if(map[i][j]==map[i+2][j]&&map[i][j]==map[i+2][j-1]) {    // §§2  
+else if(map[i][j]==map[i+2][j]&&map[i][j]==map[i+2][j-1]) {    // „Ñ¥2  
 	commap[i][j]=1;
 	commap[i+2][j]=1;
 	commap[i+2][j-1]=1;
@@ -1909,7 +1857,7 @@ else if(map[i][j]==map[i+2][j]&&map[i][j]==map[i+2][j-1]) {    // §§2
 j=1;
 i=2;
 i1=0;
-while(j<=12&&option[6]==1){//∑π¿Œ∫∏øÏ 
+while(j<=12&&option[6]==1){//Î†àÏù∏Î≥¥Ïö∞ 
 	while(i<=12){
 		while(i1<=6){
 	if(map[i][j]==i1+1)
@@ -1952,7 +1900,7 @@ if(option[8]==1){
 	j=0;
 	while(i<=14){
 		while(j<=14){
-			if(map[i][j]==4&&map[i][j-4]==4&&map[i][j]*map[i][j-1]*map[i][j-2]*map[i][j-3]*map[i][j-4]==96){     //ª˜µÂ¿ßƒ°  
+			if(map[i][j]==4&&map[i][j-4]==4&&map[i][j]*map[i][j-1]*map[i][j-2]*map[i][j-3]*map[i][j-4]==96){     //ÏÉåÎìúÏúÑÏπò  
 	map[i][j-4]=0;
 	map[i][j-3]=0;
 	map[i][j-2]=0;
@@ -1976,7 +1924,7 @@ while(i<=14){
 		if(commap[i][j]==1){
 		if(map[i][j]>=1&&map[i][j]<=7)
 		map[i][j]=20;
-		else if(map[i][j]>=1001&&map[i][j]<=1005&&option[7]==1)   //æÛ¿Ω  
+		else if(map[i][j]>=1001&&map[i][j]<=1005&&option[7]==1)   //ÏñºÏùå  
 		map[i][j]-=1000;
 		
 		
@@ -1984,7 +1932,7 @@ while(i<=14){
 		score+=10; 
 		puyocleared+=1;
 		if(option[1]==1){
-		if(map[i+2][j]==5){       //πˆ∫Ì ≥≠¿Ãµµ æÓ∑¡øÚ πÊ«ÿª—ø‰ 
+		if(map[i+2][j]==5){       //Î≤ÑÎ∏î ÎÇúÏù¥ÎèÑ Ïñ¥Î†§ÏõÄ Î∞©Ìï¥ÎøåÏöî 
 		map[i+2][j]=20;
 		destroy+=1;	
 		chall_obstruct+=1;
@@ -2011,7 +1959,7 @@ while(i<=14){
 		}
 		
 		if(option[2]==1){
-		if(map[i+2][j]==30){       //πÊ«ÿª—ø‰ 
+		if(map[i+2][j]==30){       //Î∞©Ìï¥ÎøåÏöî 
 		map[i+2][j]=20;
 		destroy+=1;	
 		chall_obstruct+=1;
@@ -2038,10 +1986,10 @@ while(i<=14){
 		}
 		bomb_fallscore_not_remove=0;
 		if(option[3]==1){
-			if(map[i+2][j]>=50&&map[i+2][j]<=55){       //∆¯≈∫ 
+			if(map[i+2][j]>=50&&map[i+2][j]<=55){       //Ìè≠ÌÉÑ 
 		destroy+=1;	
 		score+=(destroy*20)*(chain+1)*fallscore_plus;
-	//	fall+=(map[i+2][j]-49)/2;    //«œ∞≠ º”µµ √ ±‚»≠ 
+	//	fall+=(map[i+2][j]-49)/2;    //ÌïòÍ∞ï ÏÜçÎèÑ Ï¥àÍ∏∞Ìôî 
 	    chall_bomb=map[i+2][j]-50;
 		map[i+2][j]=20;
 		bomb_fallscore_not_remove=1; 
@@ -2049,7 +1997,7 @@ while(i<=14){
 		if(map[i][j+1]>=50&&map[i][j+1]<=55){
 		destroy+=1;
 		score+=(destroy*20)*(chain+1)*fallscore_plus;
-	//	fall+=(map[i][j+1]-49)/2;    //«œ∞≠ º”µµ √ ±‚»≠ 
+	//	fall+=(map[i][j+1]-49)/2;    //ÌïòÍ∞ï ÏÜçÎèÑ Ï¥àÍ∏∞Ìôî 
 	chall_bomb=map[i][j+1]-50;
 		map[i][j+1]=20;
 		bomb_fallscore_not_remove=1;
@@ -2057,7 +2005,7 @@ while(i<=14){
 		if(map[i-2][j]>=50&&map[i-2][j]<=55){
 		destroy+=1;
 		score+=(destroy*20)*(chain+1)*fallscore_plus;
-	//	fall+=(map[i-2][j]-49)/2;    //«œ∞≠ º”µµ √ ±‚»≠ 
+	//	fall+=(map[i-2][j]-49)/2;    //ÌïòÍ∞ï ÏÜçÎèÑ Ï¥àÍ∏∞Ìôî 
 	chall_bomb=map[i-2][j]-50;
 		map[i-2][j]=20;
 		bomb_fallscore_not_remove=1;
@@ -2065,7 +2013,7 @@ while(i<=14){
 		if(map[i][j-1]>=50&&map[i][j-1]<=55){
 		destroy+=1;
 		score+=(destroy*20)*(chain+1)*fallscore_plus;
-	//	fall+=(map[i][j-1]-49)/2;    //«œ∞≠ º”µµ √ ±‚»≠ 
+	//	fall+=(map[i][j-1]-49)/2;    //ÌïòÍ∞ï ÏÜçÎèÑ Ï¥àÍ∏∞Ìôî 
 	chall_bomb=map[i][j-1]-50;
 		map[i][j-1]=20;
 		bomb_fallscore_not_remove=1;
@@ -2088,7 +2036,7 @@ while(subdestroy>=4){
 	chaintime=0;
 }	
 }
-else if(option[1]==1){            //πˆ∫Ì 
+else if(option[1]==1){            //Î≤ÑÎ∏î 
 	while(subdestroy>=3){
 	chain+=1;
 	subdestroy-=3;
@@ -2098,21 +2046,21 @@ else if(option[1]==1){            //πˆ∫Ì
 }
 
 if(option[0]!=1&&option[4]!=1&&option[5]!=1&&option[8]!=1)          
-score+=(destroy*10+fallscore_plus)*chain_x[chain];//    ¡°ºˆ∞ËªÍ 
+score+=(destroy*10+fallscore_plus)*chain_x[chain];//    Ï†êÏàòÍ≥ÑÏÇ∞ 
 else if(option[0]==1)
-score+=(destroy*50+fallscore_plus)*chain_x[chain]*chain;//    ¡°ºˆ∞ËªÍ
+score+=(destroy*50+fallscore_plus)*chain_x[chain]*chain;//    Ï†êÏàòÍ≥ÑÏÇ∞
 else if(option[4]==1)
-score+=(destroy*10+fallscore_plus)*chain_x[chain]*(limit*0.2+1);//    ¡°ºˆ∞ËªÍ
+score+=(destroy*10+fallscore_plus)*chain_x[chain]*(limit*0.2+1);//    Ï†êÏàòÍ≥ÑÏÇ∞
 else if(option[5]==1){
 	if(rev_mov[0]=='d')           //reverse 
-	score+=(destroy*10+fallscore_plus)*chain_x[chain];//    ¡°ºˆ∞ËªÍ
+	score+=(destroy*10+fallscore_plus)*chain_x[chain];//    Ï†êÏàòÍ≥ÑÏÇ∞
 	else if(rev_mov[0]=='a')
-	score+=(2*chain_x[chain])*(destroy*50+2*fallscore_plus);//    ¡°ºˆ∞ËªÍ
+	score+=(2*chain_x[chain])*(destroy*50+2*fallscore_plus);//    Ï†êÏàòÍ≥ÑÏÇ∞
 }
 else if(option[8]==1){
-score+=(destroy*5+fallscore_plus)*chain_x[chain]*sandwich_plus;//    ¡°ºˆ∞ËªÍ	
+score+=(destroy*5+fallscore_plus)*chain_x[chain]*sandwich_plus;//    Ï†êÏàòÍ≥ÑÏÇ∞	
 if(sandwich_plus>1)
-chall_sandwich_score+=(destroy*5+fallscore_plus)*chain_x[chain]*sandwich_plus;//µµ¿¸∞˙¡¶ 
+chall_sandwich_score+=(destroy*5+fallscore_plus)*chain_x[chain]*sandwich_plus;//ÎèÑÏ†ÑÍ≥ºÏ†ú 
 }
 
 Gotxy(15,4);
@@ -2134,24 +2082,24 @@ else if(chain>=10){
 /////////////////////////////////////////////////////////////////////////
 
 
-void startset(){                          //Ω√¿€, ¿ÁΩ√¿€ 
+void startset(){                          //ÏãúÏûë, Ïû¨ÏãúÏûë 
 	
 	
 	gravity=0;
 	
 	
 	if(diff_select%3==0)
-	limit=8;  //øÚ¡˜¿” ¡¶«— 
+	limit=8;  //ÏõÄÏßÅÏûÑ Ï†úÌïú 
 	if(diff_select%3==1)
-	limit=6;  //øÚ¡˜¿” ¡¶«—
+	limit=6;  //ÏõÄÏßÅÏûÑ Ï†úÌïú
 	if(diff_select%3==2)
-	limit=5;  //øÚ¡˜¿” ¡¶«—
+	limit=5;  //ÏõÄÏßÅÏûÑ Ï†úÌïú
 	
 	i=0;
 	j=0;
 	while(j<=12){
 		while(i<=12){
-			if(map[i][j]>=50&&map[i][j]<=55){   //∆¯≈∫ «œ∞≠ º”µµ, ≈∏¿Ã∏”  
+			if(map[i][j]>=50&&map[i][j]<=55){   //Ìè≠ÌÉÑ ÌïòÍ∞ï ÏÜçÎèÑ, ÌÉÄÏù¥Î®∏  
 			map[i][j]+=1;
         //    fall-=0.5;
 			}			
@@ -2162,7 +2110,7 @@ void startset(){                          //Ω√¿€, ¿ÁΩ√¿€
 	}
 
 	if(option[3]==1){
-		tact=0;          //∞®¡ˆªÛºˆ tact
+		tact=0;          //Í∞êÏßÄÏÉÅÏàò tact
 	}	
 		srand((unsigned int)time(NULL));
    if(rand()%100<=70&&option[2]==1){
@@ -2187,7 +2135,7 @@ void startset(){                          //Ω√¿€, ¿ÁΩ√¿€
 		map[12][1]=30;
 	   }            
    } 
-   tact=0;          //∆¯≈∫ æ¯¿Ω ∞®¡ˆªÛºˆ tact
+   tact=0;          //Ìè≠ÌÉÑ ÏóÜÏùå Í∞êÏßÄÏÉÅÏàò tact
 	i=0;
 	j=0;
 	while(j<=12){
@@ -2200,7 +2148,7 @@ void startset(){                          //Ω√¿€, ¿ÁΩ√¿€
 	i=0;
 	j+=1;
 	}
-	if(tact==0&&option[3]==1){       //∆¯≈∫ ∑£¥˝ 
+	if(tact==0&&option[3]==1){       //Ìè≠ÌÉÑ ÎûúÎç§ 
    	if(rand()%5==0){
    		if(map[2][1]==0)
    		map[2][1]=50;
@@ -2229,7 +2177,7 @@ void startset(){                          //Ω√¿€, ¿ÁΩ√¿€
 	
 	
 	
-	 //∫Ì∑∞ º≥ƒ° ¿¸ ¡æ∑·∞®¡ˆ 
+	 //Î∏îÎü≠ ÏÑ§Ïπò Ï†Ñ Ï¢ÖÎ£åÍ∞êÏßÄ 
 	
 	turn=1;
 		mov_x=3*2;
@@ -2275,8 +2223,8 @@ void startset(){                          //Ω√¿€, ¿ÁΩ√¿€
 	map[18][4]=1+rand()%blocktype;
 	map[18][3]=1+rand()%blocktype;	
 	}	
-	block_rand+=1;	//√≥¿Ω Ω√¿€ ∞®¡ˆ∏¶ ¿ß«— ªÛºˆ (0¿Ã Ω√¿€) 
-	if(option[0]==1){ //Ω∫««µÂ 
+	block_rand+=1;	//Ï≤òÏùå ÏãúÏûë Í∞êÏßÄÎ•º ÏúÑÌïú ÏÉÅÏàò (0Ïù¥ ÏãúÏûë) 
+	if(option[0]==1){ //Ïä§ÌîºÎìú 
 		fall=7;
 		fall-=(map[mov_x][mov_y]+map[mov_x1][mov_y1]+1)*0.5;
 	}
@@ -2284,7 +2232,7 @@ void startset(){                          //Ω√¿€, ¿ÁΩ√¿€
 
 /////////////////////////////////////////////////////////////////////////
 
-void dis_mov(void){         //øÚ¡˜ø¥¿ª ∂ß æ∆∑° ∫Ì∑∞ ¿ßƒ° «•Ω√ 
+void dis_mov(void){         //ÏõÄÏßÅÏòÄÏùÑ Îïå ÏïÑÎûò Î∏îÎü≠ ÏúÑÏπò ÌëúÏãú 
 	if(turn==3){
 	i=0;
 	j=0;
@@ -2364,12 +2312,12 @@ else if(turn==2||turn==4){
 
 /////////////////////////////////////////////////////////////////////////
 
-void unit_time(){	            //«œ∞≠ 
+void unit_time(){	            //ÌïòÍ∞ï 
 int block;
 
 
 	Sleep(20);
-	if(chall_say_time>=0)    //µµ¿¸∞˙¡¶ ¥ﬁº∫ «•Ω√ Ω√∞£ 
+	if(chall_say_time>=0)    //ÎèÑÏ†ÑÍ≥ºÏ†ú Îã¨ÏÑ± ÌëúÏãú ÏãúÍ∞Ñ 
 		chall_say_time+=1;
 	    if(chall_say_time>=21){
 		Gotxy(17,1);
@@ -2380,23 +2328,23 @@ int block;
 	
 	if(chain>maxchain){
 		maxchain=chain;
-	}                       //∏∆Ω∫ √º¿Œ 
+	}                       //Îß•Ïä§ Ï≤¥Ïù∏ 
 			
-	if(chaintime>=12&&chain>=1&&bomb_fallscore_not_remove==0){       //ø¨º‚ 			
+	if(chaintime>=12&&chain>=1&&bomb_fallscore_not_remove==0){       //Ïó∞ÏáÑ 			
 			chain=0;
 			chaintime=0;
-			if(option[7]!=1) //æÛ¿Ω  
-			fallscore_plus=0;         //«’ªÍ 
+			if(option[7]!=1) //ÏñºÏùå  
+			fallscore_plus=0;         //Ìï©ÏÇ∞ 
 			else if(option[7]==1&&fallscore_plus>=100)
 			fallscore_plus=50;		
 			
 			Gotxy(15,4);
 			textcolor(BLACK,BLACK);
-            printf("          ");        //combo ∏ﬁºº¡ˆ ªË¡¶ 
+            printf("          ");        //combo Î©îÏÑ∏ÏßÄ ÏÇ≠Ï†ú 
 		}	
 if(entime>=fall){
 	if(block_rand>=2){
-	tact=0;          //all cleared ∞®¡ˆªÛºˆ tact          //  
+	tact=0;          //all cleared Í∞êÏßÄÏÉÅÏàò tact          //  
 	i=0;
 	j=12;
 	while(j>=2){
@@ -2411,7 +2359,7 @@ if(entime>=fall){
 	if(tact==0){
 		allcleared+=1;
 	}
-	tact=0;   //∞¯¡ﬂø° ¿÷¥¬ ∫Ì∑∞ ∞®¡ˆ ªÛºˆ             
+	tact=0;   //Í≥µÏ§ëÏóê ÏûàÎäî Î∏îÎü≠ Í∞êÏßÄ ÏÉÅÏàò             
 }
 	i=2;
 	j=1;
@@ -2457,7 +2405,7 @@ if(entime>=fall){
 	
 	srand((unsigned int)time(NULL));
 	
-	if(option[7]==1){                  //æÛ¿Ω  
+	if(option[7]==1){                  //ÏñºÏùå  
     icenum=2*(rand()%6)+2;
     if(map[icenum][iceheight]>=1&&map[icenum][iceheight]<=5&&rand()%101<=31)
    	map[icenum][iceheight]+=1000;
@@ -2467,7 +2415,7 @@ if(entime>=fall){
    	iceheight=12;
   }	
    	
-   	if(option[8]==1){                  //ª˜µÂ¿ßƒ° 
+   	if(option[8]==1){                  //ÏÉåÎìúÏúÑÏπò 
    i=0;
    j=0;
    while(i<=14){
@@ -2497,11 +2445,11 @@ if(entime>=fall){
 
 
 
-i=2;         //¡ﬂ∑¬ 
+i=2;         //Ï§ëÎ†• 
 	j=1;
 	while(i<=12){
 		while(j<=12){
-			if(map[i][j]!=0&&map[i][j+1]==0&&gravity==0){//æ∆∑° ¡ﬂ∑¬ 
+			if(map[i][j]!=0&&map[i][j+1]==0&&gravity==0){//ÏïÑÎûò Ï§ëÎ†• 
 				if(j!=mov_y1||i!=mov_x1){
 					if(j!=mov_y||i!=mov_x){
 					block=map[i][j];
@@ -2510,7 +2458,7 @@ i=2;         //¡ﬂ∑¬
 					}
 			}
 			}
-			else if(map[i][j]!=0&&map[i-1][j]==0&&gravity==1){//øﬁ¬  ¡ﬂ∑¬ 
+			else if(map[i][j]!=0&&map[i-1][j]==0&&gravity==1){//ÏôºÏ™Ω Ï§ëÎ†• 
 				if(map[i][j]>=1&&map[i][j]<=BLOCK) {
 				if(map[i-2][j]==0||map[i-2][j]==1+BLOCK||map[i-2][j]==2+BLOCK||map[i-2][j]==3+BLOCK||map[i-2][j]==4+BLOCK||map[i-2][j]==5+BLOCK){
 			    	if(j!=mov_y1||i!=mov_x1){
@@ -2524,7 +2472,7 @@ i=2;         //¡ﬂ∑¬
 					
 				}	
 			} 
-			else if(map[i][j]!=0&&gravity==2){//ø¿∏•¬  ¡ﬂ∑¬ 
+			else if(map[i][j]!=0&&gravity==2){//Ïò§Î•∏Ï™Ω Ï§ëÎ†• 
 			    if(map[i][j]>=1&&map[i][j]<=BLOCK) {
 			    	if(map[i+2][j]==0||map[i+2][j]==1+BLOCK||map[i+2][j]==2+BLOCK||map[i+2][j]==3+BLOCK||map[i+2][j]==4+BLOCK||map[i+2][j]==5+BLOCK){
 			    	if(j!=mov_y1||i!=mov_x1){
@@ -2538,7 +2486,7 @@ i=2;         //¡ﬂ∑¬
 					
 				}							
 		}
-			if(map[i][j]==5&&map[i][j+1]>=0&&map[i][j+1]<=4&&option[1]==1){   //πˆ∫Ì 
+			if(map[i][j]==5&&map[i][j+1]>=0&&map[i][j+1]<=4&&option[1]==1){   //Î≤ÑÎ∏î 
 				if(j!=mov_y1||i!=mov_x1){
 					if(j!=mov_y||i!=mov_x){
 					block=map[i][j];
@@ -2563,11 +2511,11 @@ i=2;         //¡ﬂ∑¬
 /////////////////////////////////////////////////////////////////////////
 
 
-void moving(void){      //øÚ¡˜¿” ∞¸∏Æ 
+void moving(void){      //ÏõÄÏßÅÏûÑ Í¥ÄÎ¶¨ 
 if(kbhit()){
 but=_getch();
-if(but==rev_mov[0]&&limit>=1){        //øﬁ¬  
-	if(option[4]==1)    //øÚ¡˜¿” ¡¶«— 
+if(but==rev_mov[0]&&limit>=1){        //ÏôºÏ™Ω 
+	if(option[4]==1)    //ÏõÄÏßÅÏûÑ Ï†úÌïú 
 limit-=1;
 	if(turn!=4&&mov_x>2&&map[mov_x-2][mov_y]==0){
 map[mov_x][mov_y]=0;
@@ -2588,8 +2536,8 @@ mov_x-=2;
 dis_mov();
 }
 	            
-else if(but==rev_mov[1]&&limit>=1){          //ø¿∏•¬  
-	if(option[4]==1)    //øÚ¡˜¿” ¡¶«— 
+else if(but==rev_mov[1]&&limit>=1){          //Ïò§Î•∏Ï™Ω 
+	if(option[4]==1)    //ÏõÄÏßÅÏûÑ Ï†úÌïú 
 limit-=1;
 	if(turn!=2&&mov_x<12&&map[mov_x+2][mov_y]==0){
 	map[mov_x][mov_y]=0;
@@ -2612,7 +2560,7 @@ map[mov_x1][mov_y1]=0;
 	dis_mov();
 }
 				
-else if(but==rev_mov[3]&&mov_y<=10&&mov_y1<=10){              //æ∆∑° 
+else if(but==rev_mov[3]&&mov_y<=10&&mov_y1<=10){              //ÏïÑÎûò 
 	if((turn==1&&map[mov_x][mov_y+1]==0)||(turn!=1&&map[mov_x1][mov_y1+1]==0)){
 	dis_mov();
 	if(mov_y<13||mov_y1<13){
@@ -2641,8 +2589,8 @@ map[mov_x1][mov_y1]=0;
 	}
 	
 }
-else if(but==rev_mov[2]&&limit>=1){              //µπ∏Æ±‚ 
-	if(option[4]==1)    //øÚ¡˜¿” ¡¶«— 
+else if(but==rev_mov[2]&&limit>=1){              //ÎèåÎ¶¨Í∏∞ 
+	if(option[4]==1)    //ÏõÄÏßÅÏûÑ Ï†úÌïú 
 limit-=1;
 	if(mov_y<13||mov_y1<13){
 		if(mov_y==mov_y1&&mov_x<mov_x1){             //2->3
@@ -2717,7 +2665,7 @@ else if(mov_x==mov_x1&&mov_y<mov_y1){             //3->4
 	}
 	dis_mov();	
 }
-else if(but==' '&&mov_y>=0){          //∞≠¡¶ «œ∞≠  
+else if(but==' '&&mov_y>=0){          //Í∞ïÏ†ú ÌïòÍ∞ï  
 	if(mov_y<13||mov_y1<13){
 		fallscore=0;
 		if(turn==1&&mov_y<13){
@@ -2762,13 +2710,13 @@ score+=1;
 	}
 startset();	
 }
-else if(but=='j'&&option[9]==1){          //¡ﬂ∑¬ πÊ«‚ øﬁ 
+else if(but=='j'&&option[9]==1){          //Ï§ëÎ†• Î∞©Ìñ• Ïôº 
 gravity=1; 
 }
-else if(but=='k'&&option[9]==1){          //¡ﬂ∑¬ πÊ«‚ øﬁ 
+else if(but=='k'&&option[9]==1){          //Ï§ëÎ†• Î∞©Ìñ• Ïôº 
 gravity=0; 
 }
-else if(but=='l'&&option[9]==1){          //¡ﬂ∑¬ πÊ«‚ øﬁ 
+else if(but=='l'&&option[9]==1){          //Ï§ëÎ†• Î∞©Ìñ• Ïôº 
 gravity=2; 
 }
 dis_mov();		    					
@@ -2780,15 +2728,15 @@ dis_mov();
 /////////////////////////////////////////////////////////////////////////
 
 
-void mapping(){     //∏„ º≥¡§ 
+void mapping(){     //Î©• ÏÑ§Ï†ï 
 	i=1;
 	j=0;
 while(i<=13){
-//	if(option[4]!=1)      //¿ßƒ° ¡¶«—		
+//	if(option[4]!=1)      //ÏúÑÏπò Ï†úÌïú		
 	if(option[9]!=1)
 	map[i][j]=100;
 	if(i!=13||i!=12)
-	map[i][j+13]=102; //¡°ºˆøÕ Å∆ƒßπÊ¡ˆ  		
+	map[i][j+13]=102; //Ï†êÏàòÏôÄ ¬ÅÌåå„èèÂß∏  		
 	i+=1;		
 	
 	}
@@ -2796,15 +2744,15 @@ while(i<=13){
 		Gotxy(0,1);
 	textcolor(WHITE,LIGHTBLUE);
 	if(gravity==1)
-	printf("     |°Á|    ");
+	printf("     |‚Üê|    ");
 	else if(gravity==0)
-	printf("     |°È|    ");
+	printf("     |‚Üì|    ");
 	else if(gravity==2)
-	printf("     |°Ê|    ");
+	printf("     |‚Üí|    ");
 	textcolor(WHITE,BLACK);
 	}	
 
-//	if(option[4]==1){	          //¿ßƒ° ¡¶«—
+//	if(option[4]==1){	          //ÏúÑÏπò Ï†úÌïú
 //		Gotxy(0,1);
 //	textcolor(WHITE,LIGHTBLUE);
 //	printf("   LIMIT : %d ",limit);
@@ -2846,7 +2794,7 @@ while(j<=13){
 	}
 	
 	j=0;	
-while(j<=5){        //πÃ∏Æ 	∫Ì∑∞ «•Ω√  
+while(j<=5){        //ÎØ∏Î¶¨ 	Î∏îÎü≠ ÌëúÏãú  
 			
 	map[16][j]=100;
 	map[20][j]=100;	
@@ -2866,9 +2814,9 @@ while(i<=20){
 	textcolor(WHITE,LIGHTBLUE);           //reverse 
 	else if(rev_mov[0]=='d')
 	textcolor(WHITE,BROWN);
-	else if(option[8]==1&&sandwich_plus!=1)   //ª˜µÂ¿ßƒ°  
+	else if(option[8]==1&&sandwich_plus!=1)   //ÏÉåÎìúÏúÑÏπò  
 	textcolor(WHITE,LIGHTMAGENTA);
-	else if(option[8]==1&&sandwich_plus==1)   //ª˜µÂ¿ßƒ°  
+	else if(option[8]==1&&sandwich_plus==1)   //ÏÉåÎìúÏúÑÏπò  
 	textcolor(WHITE,LIGHTBLUE);
 	printf("  ");
 	if(score<10)
@@ -2920,27 +2868,27 @@ while(i<=20){
 	}
 
 map[1][0]=98;
-map[13][13]=98;       //∏„ æÁ¬  ≥°¿« øß¡ˆ  
+map[13][13]=98;       //Î©• ÏñëÏ™Ω ÎÅùÏùò Ïó£ÏßÄ  
 	
 	
 }
 /////////////////////////////////////////////////////////////////////////
-void CursorView()             //ƒøº≠ ªË¡¶ 
+void CursorView()             //Ïª§ÏÑú ÏÇ≠Ï†ú 
 {
     CONSOLE_CURSOR_INFO cursorInfo = { 0, };
-    cursorInfo.dwSize = 1; //ƒøº≠ ±Ω±‚ (1 ~ 100)
-    cursorInfo.bVisible = FALSE; //ƒøº≠ Visible TRUE(∫∏¿”) FALSE(º˚±Ë)
+    cursorInfo.dwSize = 1; //Ïª§ÏÑú ÍµµÍ∏∞ (1 ~ 100)
+    cursorInfo.bVisible = FALSE; //Ïª§ÏÑú Visible TRUE(Î≥¥ÏûÑ) FALSE(Ïà®ÍπÄ)
     SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
 }
 /////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////
-int main(){         //∏ﬁ¿Œ «‘ºˆ
+int main(){         //Î©îÏù∏ Ìï®Ïàò
 
 vector <string> diffname = {"Sweet","Normal","Spicy"};
 vector<string> optionname = {"None","Speed Star","Burble","Obstruct","Bomb","Limit","Reverse","Rainbow","Freeze","Sandwich","Gravity"};
-SetConsoleTitle(TEXT("ª—ø‰ª—ø‰"));  //¿Ã∏ß πŸ≤Ÿ±‚ 
+SetConsoleTitle(TEXT("ÎøåÏöîÎøåÏöî"));  //Ïù¥Î¶Ñ Î∞îÍæ∏Í∏∞ 
 CursorView(); 
 ///////////////////////////////////////////////////////////
 
@@ -2949,104 +2897,104 @@ CursorView();
 //////////////////////////////////////////////////////////////////
 Gotxy(12,13);
 textcolor(LIGHTRED,BLACK);
-printf("¢∏");
+printf("‚óÄ");
 textcolor(LIGHTRED,BLACK);
-printf("¢∫");
+printf("‚ñ∂");
 Sleep(10);
 system("cls");
 Gotxy(4,12);
 textcolor(LIGHTRED,BLACK);
-printf("¢∏");
+printf("‚óÄ");
 textcolor(WHITE,LIGHTRED);
 printf("  ");
 textcolor(LIGHTRED,BLACK);
-printf("¢∫");
+printf("‚ñ∂");
 Sleep(10);
 system("cls");
 Gotxy(4,11);
 textcolor(LIGHTRED,BLACK);
-printf("¢∏");
+printf("‚óÄ");
 textcolor(WHITE,LIGHTRED);
 printf("    ");
 textcolor(LIGHTRED,BLACK);
-printf("¢∫");
+printf("‚ñ∂");
 Sleep(10);
 system("cls");
 Gotxy(4,10);
 textcolor(LIGHTRED,BLACK);
-printf("¢∏");
+printf("‚óÄ");
 textcolor(WHITE,LIGHTRED);
 printf("      ");
 textcolor(LIGHTRED,BLACK);
-printf("¢∫");
+printf("‚ñ∂");
 Sleep(10);
 system("cls");
 Gotxy(4,8);
 textcolor(LIGHTRED,BLACK);
-printf("¢∏");
+printf("‚óÄ");
 textcolor(WHITE,LIGHTRED);
-printf("    £–£œ    ");
+printf("    Ôº∞ÔºØ    ");
 textcolor(LIGHTRED,BLACK);
-printf("¢∫");
+printf("‚ñ∂");
 Sleep(10);
 system("cls");
 Gotxy(4,6);
 textcolor(LIGHTRED,BLACK);
-printf("¢∏");
+printf("‚óÄ");
 textcolor(WHITE,LIGHTRED);
-printf("    £–£’£Ÿ£œ    ");
+printf("    Ôº∞ÔºµÔºπÔºØ    ");
 textcolor(LIGHTRED,BLACK);
-printf("¢∫");
+printf("‚ñ∂");
 Sleep(10);
 system("cls");
 Gotxy(4,4);
 textcolor(LIGHTRED,BLACK);
-printf("¢∏");
+printf("‚óÄ");
 textcolor(WHITE,LIGHTRED);
-printf("    £–£’£Ÿ£’£Ÿ£œ    ");
+printf("    Ôº∞ÔºµÔºπÔºµÔºπÔºØ    ");
 textcolor(LIGHTRED,BLACK);
-printf("¢∫");
+printf("‚ñ∂");
 Sleep(10);
 system("cls");
 Gotxy(4,2);
 textcolor(LIGHTRED,BLACK);
-printf("¢∏");
+printf("‚óÄ");
 textcolor(WHITE,LIGHTRED);
-printf("    £–£’£Ÿ£œ £–£’£Ÿ£œ    ");
+printf("    Ôº∞ÔºµÔºπÔºØ Ôº∞ÔºµÔºπÔºØ    ");
 textcolor(LIGHTRED,BLACK);
-printf("¢∫");
+printf("‚ñ∂");
 ///////////////////////////////////////////////////////////
 while(1){
 Gotxy(2,1);
 textcolor(RED,BLACK);
-printf("°‹");
+printf("‚óè");
 Gotxy(0,14);
 textcolor(LIGHTGREEN,BLACK);
-printf("°‹");
+printf("‚óè");
 Gotxy(1,25);
 textcolor(BLUE,BLACK);
-printf("°‹");
+printf("‚óè");
 Gotxy(8,30);
 textcolor(BROWN,BLACK);
-printf("°‹");
+printf("‚óè");
 Gotxy(10,19);
 textcolor(MAGENTA,BLACK);
-printf("°‹");
+printf("‚óè");
 Gotxy(10,10);
 textcolor(LIGHTGREEN,BLACK);
-printf("°‹");
+printf("‚óè");
 Gotxy(8,2);
 textcolor(BROWN,BLACK);
-printf("°‹");
+printf("‚óè");
 ///////////////////
 
 Gotxy(4,2);
 textcolor(LIGHTRED,BLACK);
-printf("¢∏");
+printf("‚óÄ");
 textcolor(WHITE,LIGHTRED);
-printf("    £–£’£Ÿ£œ £–£’£Ÿ£œ    ");
+printf("    Ôº∞ÔºµÔºπÔºØ Ôº∞ÔºµÔºπÔºØ    ");
 textcolor(LIGHTRED,BLACK);
-printf("¢∫");
+printf("‚ñ∂");
 textcolor(WHITE,BLACK);
 ///////////////////
 Gotxy(6,2);
@@ -3059,7 +3007,7 @@ if(but=='q'){
 	blocktype=4;
 	fall=10;
 	limit=6; //normal
-	diff_select=1;         //±‚∫ª ≥≠¿Ãµµ 
+	diff_select=1;         //Í∏∞Î≥∏ ÎÇúÏù¥ÎèÑ 
 goto Manu;
 }
 
@@ -3080,232 +3028,232 @@ Manu :
 	if(start_select!=0){
 	Gotxy(2,6);	
 	textcolor(BROWN,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(WHITE,BROWN);
 	printf("          ");
 	Gotxy(3,6);
 	textcolor(BROWN,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(WHITE,BROWN);
-    printf("£”£‘£¡£“£‘");
+    printf("Ôº≥Ôº¥Ôº°Ôº≤Ôº¥");
     textcolor(BROWN,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(4,6);
     textcolor(WHITE,BROWN);
     printf("          ");
     textcolor(BROWN,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
 	else if(start_select==0){
 	Gotxy(2,6);	
 	textcolor(WHITE,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(BROWN,WHITE);
 	printf("          ");
 	Gotxy(3,6);
 	textcolor(WHITE,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(BROWN,WHITE);
-    printf("£”£‘£¡£“£‘");
+    printf("Ôº≥Ôº¥Ôº°Ôº≤Ôº¥");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(4,6);
     textcolor(BROWN,WHITE);
     printf("          ");
     textcolor(WHITE,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
     if(start_select!=3){
 	Gotxy(6,2);	
 	textcolor(LIGHTRED,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(WHITE,LIGHTRED);
 	printf("          ");
 	Gotxy(7,2);
 	textcolor(LIGHTRED,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(WHITE,LIGHTRED);
     printf("  OPTION  ");
     textcolor(LIGHTRED,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(8,2);
     textcolor(WHITE,LIGHTRED);
     printf("          ");
     textcolor(LIGHTRED,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
 	else if(start_select==3){
 	Gotxy(6,2);	
 	textcolor(WHITE,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(LIGHTRED,WHITE);
 	printf("          ");
 	Gotxy(7,2);
 	textcolor(WHITE,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(LIGHTRED,WHITE);
     printf("  OPTION  ");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(8,2);
     textcolor(LIGHTRED,WHITE);
     printf("          ");
     textcolor(WHITE,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
     if(start_select!=4){
 	Gotxy(6,17);	
 	textcolor(CYAN,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(WHITE,CYAN);
 	printf("          ");
 	Gotxy(7,17);
 	textcolor(CYAN,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(WHITE,CYAN);
     printf(" HANDICAP ");
     textcolor(CYAN,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(8,17);
     textcolor(WHITE,CYAN);
     printf("          ");
     textcolor(CYAN,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
 	else if(start_select==4){
 	Gotxy(6,17);	
 	textcolor(WHITE,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(CYAN,WHITE);
 	printf("          ");
 	Gotxy(7,17);
 	textcolor(WHITE,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(CYAN,WHITE);
     printf(" HANDICAP ");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(8,17);
     textcolor(CYAN,WHITE);
     printf("          ");
     textcolor(WHITE,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
     if(start_select!=1){
 	Gotxy(2,21);	
 	textcolor(LIGHTMAGENTA,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(WHITE,LIGHTMAGENTA);
 	printf("          ");
 	Gotxy(3,21);
 	textcolor(LIGHTMAGENTA,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(WHITE,LIGHTMAGENTA);
     printf(" STANDING ");
     textcolor(LIGHTMAGENTA,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(4,21);
     textcolor(WHITE,LIGHTMAGENTA);
     printf("          ");
     textcolor(LIGHTMAGENTA,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
 	else if(start_select==1){
 	Gotxy(2,21);	
 	textcolor(WHITE,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(LIGHTMAGENTA,WHITE);
 	printf("          ");
 	Gotxy(3,21);
 	textcolor(WHITE,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(LIGHTMAGENTA,WHITE);
     printf(" STANDING ");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(4,21);
     textcolor(LIGHTMAGENTA,WHITE);
     printf("          ");
     textcolor(WHITE,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
 	if(start_select!=2){
 	Gotxy(2,36);	
 	textcolor(LIGHTBLUE,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(WHITE,LIGHTBLUE);
 	printf("          ");
 	Gotxy(3,36);
 	textcolor(LIGHTBLUE,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(WHITE,LIGHTBLUE);
     printf("   CODE   ");
     textcolor(LIGHTBLUE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(4,36);
     textcolor(WHITE,LIGHTBLUE);
     printf("          ");
     textcolor(LIGHTBLUE,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
 	else if(start_select==2){
 	Gotxy(2,36);	
 	textcolor(WHITE,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(LIGHTBLUE,WHITE);
 	printf("          ");
 	Gotxy(3,36);
 	textcolor(WHITE,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(LIGHTBLUE,WHITE);
     printf("   CODE   ");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(4,36);
     textcolor(LIGHTBLUE,WHITE);
     printf("          ");
     textcolor(WHITE,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
 	if(start_select!=5){
 	Gotxy(6,32);	
 	textcolor(LIGHTGREEN,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(WHITE,LIGHTGREEN);
 	printf("          ");
 	Gotxy(7,32);
 	textcolor(LIGHTGREEN,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(WHITE,LIGHTGREEN);
     printf("CHALLENGE!");
     textcolor(LIGHTGREEN,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(8,32);
     textcolor(WHITE,LIGHTGREEN);
     printf("          ");
     textcolor(LIGHTGREEN,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
 	else if(start_select==5){
 	Gotxy(6,32);	
 	textcolor(WHITE,BLACK);
-	printf("  °·");
+	printf("  ‚ñ†");
 	textcolor(LIGHTGREEN,WHITE);
 	printf("          ");
 	Gotxy(7,32);
 	textcolor(WHITE,BLACK);
-	printf("°·");
+	printf("‚ñ†");
 	textcolor(LIGHTGREEN,WHITE);
     printf("CHALLENGE!");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(8,32);
     textcolor(LIGHTGREEN,WHITE);
     printf("          ");
     textcolor(WHITE,BLACK);
-    printf("°·  ");
+    printf("‚ñ†  ");
 	}
-////////////////////////////////////////////////////////////       //≥≠¿Ãµµ ø…º« º±≈√ µΩ∫«√∑°¿◊  
+////////////////////////////////////////////////////////////       //ÎÇúÏù¥ÎèÑ ÏòµÏÖò ÏÑ†ÌÉù ÎîîÏä§ÌîåÎûòÏûâ  
 textcolor(WHITE,BLACK);
 Gotxy(12,20);
 cout<<"| Handicap : "<<diffname.at(diff_select%3);
@@ -3504,7 +3452,7 @@ file_read15(MAXCHAIN);
     textcolor(WHITE,BLACK);
     printf("q : Out");
     
-	if(kbhit()){      //≈¨∏Ø ∞®¡ˆ 
+	if(kbhit()){      //ÌÅ¥Î¶≠ Í∞êÏßÄ 
 but=_getch();
 
 if(but=='a'||but=='d'){
@@ -3544,86 +3492,86 @@ Diff :
     printf("   Handicap   ");
     Gotxy(5,12);
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(CYAN,WHITE);
-    printf("  °„  ");
+    printf("  ‚ñ≤  ");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     
     if(diff_select%3==0){         //Sweet 
     Gotxy(6,12);
     textcolor(YELLOW,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(BROWN,YELLOW);
     printf("      ");
     textcolor(YELLOW,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(BROWN,YELLOW);
     printf("  Sweet!  ");
 	Gotxy(8,12);
     textcolor(YELLOW,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(BROWN,YELLOW);
     printf("      ");
     textcolor(YELLOW,WHITE);
-    printf("°·");
+    printf("‚ñ†");
 	blocktype=3;
 	fall=14;
-	limit=8;          //¿ßƒ° ¡¶«—	
+	limit=8;          //ÏúÑÏπò Ï†úÌïú	
 	}
 	else if(diff_select%3==1){         //Normal 
     Gotxy(6,12);
     textcolor(BROWN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(BROWN,BROWN);
     printf("      ");
     textcolor(BROWN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(YELLOW,BROWN);
     printf("  Normal  ");
 	Gotxy(8,12);	
 	textcolor(BROWN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(BROWN,BROWN);
     printf("      ");
     textcolor(BROWN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
 	blocktype=4;
 	fall=10;
-	limit=6;          //¿ßƒ° ¡¶«—	
+	limit=6;          //ÏúÑÏπò Ï†úÌïú	
 	}
 	else if(diff_select%3==2){         //Spicy
     Gotxy(6,12);
     textcolor(RED,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(RED,RED);
     printf("      ");
     textcolor(RED,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,RED);
     printf("  Spicy!  ");
 	Gotxy(8,12);	
 	textcolor(RED,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(RED,RED);
     printf("      ");
     textcolor(RED,WHITE);
-    printf("°·");	
+    printf("‚ñ†");	
     blocktype=5;
 	fall=7;
-	limit=5;          //¿ßƒ° ¡¶«—
+	limit=5;          //ÏúÑÏπò Ï†úÌïú
 	}
 	
     Gotxy(9,12);
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(CYAN,WHITE);
-    printf("  °Â  ");
+    printf("  ‚ñº  ");
     textcolor(WHITE,BLACK);
-    printf("°·");	
+    printf("‚ñ†");	
     Gotxy(13,2);
     printf("w/s : Up/Down");
     Gotxy(14,2);
@@ -3666,30 +3614,30 @@ else if(but=='q'){
     printf("    Option    ");
     Gotxy(5,12);
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(CYAN,WHITE);
-    printf("  °„  ");
+    printf("  ‚ñ≤  ");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     
     if(op_select%OPTYPE==0){         //None 
 	Gotxy(6,12);
     textcolor(LIGHTGRAY,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(WHITE,LIGHTGRAY);
     printf("      ");
     textcolor(LIGHTGRAY,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,LIGHTGRAY);
     printf("   None   ");
 	Gotxy(8,12);
     textcolor(LIGHTGRAY,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(WHITE,LIGHTGRAY);
     printf("      ");
     textcolor(LIGHTGRAY,WHITE);
-    printf("°·");	
+    printf("‚ñ†");	
     textcolor(DARKGRAY,BLACK);
     Gotxy(11,3);
     textcolor(DARKGRAY,BLACK);
@@ -3698,106 +3646,106 @@ else if(but=='q'){
     else if(op_select%OPTYPE==1){         //Speed
     Gotxy(6,12);
     textcolor(BROWN,WHITE);
-    printf("°⁄");
+    printf("‚òÖ");
     textcolor(BROWN,YELLOW);
     printf("      ");
     textcolor(BROWN,WHITE);
-    printf("°⁄");
+    printf("‚òÖ");
     Gotxy(7,12);
     textcolor(BROWN,YELLOW);
     printf("Speed Star");
 	Gotxy(8,12);
     textcolor(BROWN,WHITE);
-    printf("°⁄");
+    printf("‚òÖ");
     textcolor(BROWN,YELLOW);
     printf("      ");
     textcolor(BROWN,WHITE);
-    printf("°⁄");
+    printf("‚òÖ");
 	}
 	else if(op_select%OPTYPE==2){         //burble 
     Gotxy(6,12);
     textcolor(LIGHTBLUE,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(WHITE,LIGHTBLUE);
     printf("      ");
     textcolor(LIGHTBLUE,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,LIGHTBLUE);
     printf("  Burble  ");
 	Gotxy(8,12);	
     textcolor(LIGHTBLUE,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(WHITE,LIGHTBLUE);
     printf("      ");
     textcolor(LIGHTBLUE,WHITE);
-    printf("°·");	
+    printf("‚ñ†");	
 	}
 	else if(op_select%OPTYPE==3){         //Obstruct
     Gotxy(6,12);
     textcolor(DARKGRAY,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(DARKGRAY,DARKGRAY);
     printf("      ");
     textcolor(DARKGRAY,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,DARKGRAY);
     printf(" Obstruct ");
 	Gotxy(8,12);	
 	textcolor(DARKGRAY,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(DARKGRAY,DARKGRAY);
     printf("      ");
     textcolor(DARKGRAY,WHITE);
-    printf("°·");	
+    printf("‚ñ†");	
 	}
 	else if(op_select%OPTYPE==4){         //Bomb
     Gotxy(6,12);
     textcolor(RED,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(RED,RED);
     printf("      ");
     textcolor(RED,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,RED);
     printf("   Bomb   ");
 	Gotxy(8,12);	
 	textcolor(RED,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(RED,RED);
     printf("      ");
     textcolor(RED,WHITE);
-    printf("°·");	
+    printf("‚ñ†");	
 	}
 	else if(op_select%OPTYPE==5){         //Limit
     Gotxy(6,12);
     textcolor(LIGHTRED,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(RED,LIGHTRED);
     printf("      ");
     textcolor(LIGHTRED,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,LIGHTRED);
     printf("  Limit!  ");
 	Gotxy(8,12);	
 	textcolor(LIGHTRED,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(RED,LIGHTRED);
     printf("      ");
     textcolor(LIGHTRED,WHITE);
-    printf("°·");	
+    printf("‚ñ†");	
 	}
 	else if(op_select%OPTYPE==6){         //Reverse
     Gotxy(6,12);
     textcolor(BROWN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(RED,BROWN);
     printf("      ");
     textcolor(BROWN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,LIGHTBLUE);
     printf(" Reve");
@@ -3805,58 +3753,58 @@ else if(but=='q'){
     printf("rse! ");
 	Gotxy(8,12);	
 	textcolor(LIGHTBLUE,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(RED,LIGHTBLUE);
     printf("      ");
     textcolor(LIGHTBLUE,WHITE);
-    printf("°·");	
+    printf("‚ñ†");	
 	}
 else if(op_select%OPTYPE==7){         //Rainbow
     Gotxy(6,12);
     textcolor(LIGHTGREEN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(RED,LIGHTMAGENTA);
     printf("      ");
     textcolor(CYAN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,LIGHTRED);
     printf(" Rainbow! ");
 	Gotxy(8,12);	
 	textcolor(CYAN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(RED,LIGHTMAGENTA);
     printf("      ");
     textcolor(LIGHTGREEN,WHITE);
-    printf("°·");	
+    printf("‚ñ†");	
 	}
 else if(op_select%OPTYPE==8){         //Freeze
     Gotxy(6,12);
     textcolor(LIGHTBLUE,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(BLACK,CYAN);
     printf("      ");
     textcolor(LIGHTBLUE,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,CYAN);
     printf("  Freeze  ");
 	Gotxy(8,12);	
 	textcolor(LIGHTBLUE,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(BLACK,CYAN);
     printf("      ");
     textcolor(LIGHTBLUE,WHITE);
-    printf("°·");	   
+    printf("‚ñ†");	   
 	}
 else if(op_select%OPTYPE==9){         //sandwich
     Gotxy(6,12);
     textcolor(BROWN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(BROWN,BROWN);
     printf("      ");
     textcolor(BROWN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,LIGHTRED);
     printf(" Sand");
@@ -3865,30 +3813,30 @@ else if(op_select%OPTYPE==9){         //sandwich
     printf("wich ");
 	Gotxy(8,12);	
 	textcolor(BROWN,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(BROWN,BROWN);
     printf("      ");
     textcolor(BROWN,WHITE);
-    printf("°·");	
+    printf("‚ñ†");	
 	}	
 	else if(op_select%OPTYPE==10){         //Freeze
     Gotxy(6,12);
     textcolor(LIGHTMAGENTA,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(BLACK,MAGENTA);
     printf("      ");
     textcolor(LIGHTMAGENTA,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     Gotxy(7,12);
     textcolor(WHITE,MAGENTA);
     printf(" Gravity! ");
 	Gotxy(8,12);	
 	textcolor(LIGHTMAGENTA,WHITE);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(BLACK,MAGENTA);
     printf("      ");
     textcolor(LIGHTMAGENTA,WHITE);
-    printf("°·");	
+    printf("‚ñ†");	
 	}
 if(op_select%OPTYPE!=0){
 	Gotxy(11,3);
@@ -3897,11 +3845,11 @@ if(op_select%OPTYPE!=0){
 }	
     Gotxy(9,12);
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(CYAN,WHITE);
-    printf("  °Â  ");
+    printf("  ‚ñº  ");
     textcolor(WHITE,BLACK);
-    printf("°·");	
+    printf("‚ñ†");	
     Gotxy(14,2);
     printf("w/s : Up/Down");
     Gotxy(15,2);
@@ -3926,36 +3874,36 @@ else if(but=='s'){
 
 else if(but=='q'){
 	if(op_select%OPTYPE==1){
-	option[0]=1;            //Ω∫««µÂ 
+	option[0]=1;            //Ïä§ÌîºÎìú 
 	}
 	else if(op_select%OPTYPE==2){
 	option[1]=1;
-		            //πˆ∫Ì 
+		            //Î≤ÑÎ∏î 
 	}
 	else if(op_select%OPTYPE==3){
-	option[2]=1;	            //πÊ«ÿª—ø‰ 
+	option[2]=1;	            //Î∞©Ìï¥ÎøåÏöî 
 	}
 	else if(op_select%OPTYPE==4){
-	option[3]=1;	            //∆¯≈∫ 
+	option[3]=1;	            //Ìè≠ÌÉÑ 
 	}
 	else if(op_select%OPTYPE==5){
-	option[4]=1;	            //øÚ¡˜¿” ¡¶«— 
+	option[4]=1;	            //ÏõÄÏßÅÏûÑ Ï†úÌïú 
 	}
 	else if(op_select%OPTYPE==6){
 	option[5]=1;	            //reverse
 	
 	}
 	else if(op_select%OPTYPE==7){
-	option[6]=1;	            //∑π¿Œ∫∏øÏ 
+	option[6]=1;	            //Î†àÏù∏Î≥¥Ïö∞ 
 	}
 	else if(op_select%OPTYPE==8){
-	option[7]=1;	            //æÛ¿Ω 
+	option[7]=1;	            //ÏñºÏùå 
 	}
 	else if(op_select%OPTYPE==9){
-	option[8]=1;	            //ª˜µÂ¿ßƒ°  
+	option[8]=1;	            //ÏÉåÎìúÏúÑÏπò  
 	}
 	else if(op_select%OPTYPE==10){
-	option[9]=1;	            //¡ﬂ∑¬   
+	option[9]=1;	            //Ï§ëÎ†•   
 	}
 	goto Manu;
 }
@@ -3987,7 +3935,7 @@ op_select=9;
 Chall :
 system("cls");
 
-fin.open("challenge.txt");//µµ¿¸∞˙¡¶   
+fin.open("challenge.txt");//ÎèÑÏ†ÑÍ≥ºÏ†ú   
 fin>>file_int;
 fin.close();
 i=0;
@@ -3999,7 +3947,7 @@ while(i<=11){
 i2=0;
 i1=1;
 j1=0;
-while(j1<=11){   //â¢¿¸∞˙¡¶ ∞≥ºˆ 
+while(j1<=11){   //¬â‚ô£ÂñöÈÑï Í∞úÏàò 
 	i=6*(chall_type[j1]+ chall_type_plus[j1]);
 	j=0;
 	while(j<=31){
@@ -4018,7 +3966,7 @@ j1+=1;
 		Gotxy(2,10);
 	textcolor(WHITE,CYAN);
     printf("  Challenge!  ");
-  //////////////////////////////////   Ω∫≈©∑—  
+  //////////////////////////////////   Ïä§ÌÅ¨Î°§  
     textcolor(DARKGRAY,DARKGRAY);
     j=0;
     while(j<=16){
@@ -4034,11 +3982,11 @@ j1+=1;
   ////////////////////////////////////  
 Gotxy(4,5);
 textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(CYAN,WHITE);
-    printf("         °„         ");
+    printf("         ‚ñ≤         ");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     
 i=0;
 j=0;
@@ -4048,11 +3996,11 @@ while(j<=31){
 		if(((i+i1)/6)%2==0)
 		textcolor(WHITE,CYAN);
 		else if(((i+i1)/6)%2==1)
-		textcolor(WHITE,LIGHTBLUE);  //ªˆ±Ú π¯∞•æ∆∞®  
+		textcolor(WHITE,LIGHTBLUE);  //ÏÉâÍπî Î≤àÍ∞àÏïÑÍ∞ê  
 	}	
 	else if(dis_chall[i+i1][j]=='~')
 	textcolor(BLACK,BLACK);
-	if((i+i1)%6==4&&j>=2&&j<=27&&dis_chall[i+i1][3]=='1')//øœ∑·«— ªÛ≈¬∞° æ∆¥— ªÛ≈¬¿œ ∂ß µµ¿¸∞˙¡¶ ¥‹∞Ë »Úªˆ πŸ≈¡ 
+	if((i+i1)%6==4&&j>=2&&j<=27&&dis_chall[i+i1][3]=='1')//ÏôÑÎ£åÌïú ÏÉÅÌÉúÍ∞Ä ÏïÑÎãå ÏÉÅÌÉúÏùº Îïå ÎèÑÏ†ÑÍ≥ºÏ†ú Îã®Í≥Ñ Ìù∞ÏÉâ Î∞îÌÉï 
 	textcolor(DARKGRAY,WHITE);
 	Gotxy(i+5,j+2);
 		cout<<dis_chall[i+i1][j];
@@ -4063,11 +4011,11 @@ while(j<=31){
 }
 Gotxy(22,5);
 textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(CYAN,WHITE);
-    printf("         °Â         ");
+    printf("         ‚ñº         ");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(WHITE,BLACK);
     Gotxy(24,2);
     printf("w/s : Up/Down");
@@ -4083,7 +4031,7 @@ if(but=='w'){
 	}
 	
 }
-else if(but=='s'){      //«— ∞≥ √ﬂ∞°µ… ∂ß ∏∂¥Ÿ +6 
+else if(but=='s'){      //Ìïú Í∞ú Ï∂îÍ∞ÄÎê† Îïå ÎßàÎã§ +6 
 	if(i1!=55){
 	i1+=1;	
 	i2+=1;
@@ -4109,11 +4057,11 @@ else if(but=='q'){
     printf("    Code!    ");	
     Gotxy(6,5);
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(WHITE,WHITE);
     printf("                 ");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
 	
 	if(i1==0)
 	textcolor(BLACK,WHITE);
@@ -4126,9 +4074,9 @@ else if(but=='q'){
 	else if(i1==16)
 	textcolor(LIGHTGREEN,WHITE);
     Gotxy(7,5);
-	printf("§˝");
+	printf("„Üç");
 	Gotxy(7,24);
-	printf("§˝");
+	printf("„Üç");
 	i=0;
     while(i<=16){
     if(i%2==1)
@@ -4142,11 +4090,11 @@ else if(but=='q'){
 	textcolor(WHITE,WHITE);
 	Gotxy(8,5);
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     textcolor(WHITE,WHITE);
     printf("                 ");
     textcolor(WHITE,BLACK);
-    printf("°·");
+    printf("‚ñ†");
     //////////
 	while(1){
 	
@@ -4161,9 +4109,9 @@ else if(but=='q'){
 	else if(i1==16)
 	textcolor(LIGHTGREEN,WHITE);
     Gotxy(7,5);
-	printf("§˝");
+	printf("„Üç");
 	Gotxy(7,24);
-	printf("§˝");
+	printf("„Üç");
 	textcolor(WHITE,BLACK);
 	
 /////////////////////////		
@@ -4176,7 +4124,7 @@ cout<<but;
 code[i1/2]=but;	
 i1+=2;
 }
-else if(but==0x08){    //backspace ∞®¡ˆ 
+else if(but==0x08){    //backspace Í∞êÏßÄ 
 	if(i1>0)
 	i1-=2;
 	textcolor(DARKGRAY,DARKGRAY);
@@ -4335,7 +4283,7 @@ fout.close();
 }
 else if(code[0]=='c'&&code[1]=='h'&&code[2]=='a'&&code[3]=='l'&&code[4]=='l'&&code[5]=='1'&&code[6]=='0'&&code[7]=='2'){
 
-	fout.open("challenge.txt");//µµ¿¸∞˙¡¶   
+	fout.open("challenge.txt");//ÎèÑÏ†ÑÍ≥ºÏ†ú   
 i=0;
 while(i<=11){
 	chall_type_plus[i]=0;
@@ -4352,7 +4300,7 @@ gravity_use=0;
 else if(code[0]=='G'&&code[1]=='V'&&code[2]=='-'&&code[3]=='f'&&code[4]=='a'&&code[5]=='l'&&code[6]=='s'&&code[7]=='e'){
 gravity_use=1;
 }
-else if(code[0]=='p'&&code[1]=='u'&&code[2]=='y'&&code[3]=='o'&&code[4]=='p'&&code[5]=='u'&&code[6]=='y'&&code[7]=='o'){  //¿ÃΩ∫≈Õæ÷±◊ 
+else if(code[0]=='p'&&code[1]=='u'&&code[2]=='y'&&code[3]=='o'&&code[4]=='p'&&code[5]=='u'&&code[6]=='y'&&code[7]=='o'){  //Ïù¥Ïä§ÌÑ∞Ïï†Í∑∏ 
 if(chall_type_plus[11]==0){
 chall_type_plus[11]=1;
 chall_say();
@@ -4384,10 +4332,10 @@ printf("q : Out");
 	
 	if(option[0]==1){	
 	blocktype-=1;
-	fall=7;	            //Ω∫««µÂ 
+	fall=7;	            //Ïä§ÌîºÎìú 
 	}
 	else if(option[6]==1){
-           //∑π¿Œ∫∏øÏ 
+           //Î†àÏù∏Î≥¥Ïö∞ 
 	blocktype=7;
 	}
 	else if(option[5]==1){
@@ -4397,7 +4345,7 @@ printf("q : Out");
 	fall+=3;	
 	}
 	else if(option[8]==1){
-           //æÛ¿Ω 
+           //ÏñºÏùå 
 	blocktype=4;
 	}
 		
@@ -4406,25 +4354,25 @@ printf("q : Out");
 	puyo();	
 	Gotxy(6,3);
 	textcolor(LIGHTRED,BLACK);
-	cout<<"£“£Â£·£‰£˘?"<<endl;
+	cout<<"Ôº≤ÔΩÖÔΩÅÔΩÑÔΩô?"<<endl;
 	Sleep(700);
 	Gotxy(6,3);
-	cout<<"£”£Ù£·£Ú£Ù!"<<endl;
+	cout<<"Ôº≥ÔΩîÔΩÅÔΩíÔΩî!"<<endl;
 	Sleep(500);
 	textcolor(WHITE,BLACK);
 
 	
 //	textcolor(BROWN,BLACK);
 //	Gotxy(-1,2);
-//	cout<<"°„";
+//	cout<<"‚ñ≤";
 //	Gotxy(-1,12);
-//	cout<<"°„";
+//	cout<<"‚ñ≤";
 //	Gotxy(-2,5);
-//	cout<<"°„";
+//	cout<<"‚ñ≤";
 //	Gotxy(-2,7);
-//	cout<<"°„";
+//	cout<<"‚ñ≤";
 //	Gotxy(-2,9);
-//	cout<<"°„";
+//	cout<<"‚ñ≤";
 //	textcolor(BLACK,BROWN);
 //	Gotxy(-1,4);
 //	cout<<":";
@@ -4435,7 +4383,7 @@ printf("q : Out");
 //	Gotxy(-1,10);
 //	cout<<":";	
 //	Gotxy(-1,6);
-//	cout<<"¢¬¢¬";
+//	cout<<"‚óà‚óà";
 	startset();
 	for(;;){
 		//system("cls");
@@ -4443,7 +4391,7 @@ printf("q : Out");
 		entime+=1;
 		
 		
-		if(chain>=1)    //√º¿Œ≈∏¿”  
+		if(chain>=1)    //Ï≤¥Ïù∏ÌÉÄÏûÑ  
 		chaintime+=1;
 		
 		i=2;
@@ -4454,7 +4402,7 @@ printf("q : Out");
 				if(map[i][j]==0){
 					Gotxy(j,i);
 				textcolor(BLACK,BLACK);
-				printf("  ");	    //»≠∏È ±Ù∫˝∞≈∏≤ πÊ¡ˆ 
+				printf("  ");	    //ÌôîÎ©¥ ÍπúÎπ°Í±∞Î¶º Î∞©ÏßÄ 
 				}
 				
 				
@@ -4468,7 +4416,7 @@ printf("q : Out");
 			j+=1;
 			Gotxy(j,15);
 				textcolor(BLACK,BLACK);
-				printf(" ");   //ø∑ ±Ù∫˝¿” πˆ±◊ «ÿ∞· ¿¸±Ó¡ˆ¿« πÊ¡ˆ  
+				printf(" ");   //ÏòÜ ÍπúÎπ°ÏûÑ Î≤ÑÍ∑∏ Ìï¥Í≤∞ Ï†ÑÍπåÏßÄÏùò Î∞©ÏßÄ  
 			Gotxy(j,0);
 				textcolor(BLACK,BLACK);
 				printf(" ");	
@@ -4483,7 +4431,7 @@ printf("q : Out");
 	if(mov_y>=12||mov_y1>=12){
 	startset();	
 	}
-	else if(turn==1&&map[mov_x][mov_y+1]!=0&&map[mov_x][mov_y+1]!=11&&map[mov_x][mov_y+1]!=12&&map[mov_x][mov_y+1]!=14&&map[mov_x][mov_y+1]!=13&&map[mov_x][mov_y+1]!=8&&map[mov_x][mov_y+1]!=9&&map[mov_x][mov_y+1]!=10){             //∫Ì∑∞¿Ã ∂•ø° ¥Í∞Ì ¿ÁΩ√¿€ ∞®¡ˆ 
+	else if(turn==1&&map[mov_x][mov_y+1]!=0&&map[mov_x][mov_y+1]!=11&&map[mov_x][mov_y+1]!=12&&map[mov_x][mov_y+1]!=14&&map[mov_x][mov_y+1]!=13&&map[mov_x][mov_y+1]!=8&&map[mov_x][mov_y+1]!=9&&map[mov_x][mov_y+1]!=10){             //Î∏îÎü≠Ïù¥ ÎïÖÏóê ÎãøÍ≥† Ïû¨ÏãúÏûë Í∞êÏßÄ 
 
 	startset();	
 	}
@@ -4511,8 +4459,8 @@ printf("q : Out");
 	j=1;
 	while(i<=12){
 		while(j<=12){
-			if(map[i][j]==56){        //ø©±‚º≠ ≈Õ¡¸ ∆¯≈∫  
-			map[i][j]=20;    //«œ∞≠ º”µµ √ ±‚»≠  
+			if(map[i][j]==56){        //Ïó¨Í∏∞ÏÑú ÌÑ∞Ïßê Ìè≠ÌÉÑ  
+			map[i][j]=20;    //ÌïòÍ∞ï ÏÜçÎèÑ Ï¥àÍ∏∞Ìôî  
 //			if(diff_select%3==0){
 //				fall=14;
 //			}
@@ -4552,7 +4500,7 @@ printf("q : Out");
 	
 	
 	
-	tact=0;   //∞¯¡ﬂø° ¿÷¥¬ ∫Ì∑∞ ∞®¡ˆ ªÛºˆ 
+	tact=0;   //Í≥µÏ§ëÏóê ÏûàÎäî Î∏îÎü≠ Í∞êÏßÄ ÏÉÅÏàò 
 	i=2;
 	j=1;
 	while(i<=12){
@@ -4568,7 +4516,7 @@ printf("q : Out");
 		j=1;
 		i+=2;
 	}
-	if(tact==0){           //ª—ø‰ ∆ƒ±´ 
+	if(tact==0){           //ÎøåÏöî ÌååÍ¥¥ 
 	if(turn==1&&map[mov_x][mov_y+1]!=1&&map[mov_x][mov_y+1]!=2&&map[mov_x][mov_y+1]!=3&&map[mov_x][mov_y+1]!=4&&map[mov_x][mov_y+1]!=5&&map[mov_x][mov_y+1]!=6&&map[mov_x][mov_y+1]!=7&&mov_y<=2)
 	blockbreak();
 	else if(turn!=1&&map[mov_x1][mov_y1+1]!=1&&map[mov_x1][mov_y1+1]!=2&&map[mov_x1][mov_y1+1]!=3&&map[mov_x1][mov_y1+1]!=4&&map[mov_x1][mov_y1+1]!=5&&map[mov_x1][mov_y1+1]!=6&&map[mov_x1][mov_y1+1]!=7&&mov_y1<=2)
@@ -4576,7 +4524,7 @@ printf("q : Out");
 	}
 	tact=0;
 ////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////// µµ¿¸∞˙¡¶ ∞®¡ˆ	
+/////////////////////////////////////////////////////////// ÎèÑÏ†ÑÍ≥ºÏ†ú Í∞êÏßÄ	
 if(score>=10000&&chall_type_plus[0]==0){
 chall_type_plus[0]+=1;
 chall_say();
@@ -4611,7 +4559,7 @@ else if(maxchain>=15&&chall_type_plus[1]==2){
 	chall_say();
 }
 
-if(allcleared-1>=1&&chall_type_plus[2]==0){//¿”Ω√º˝¿⁄∑Œ ¿Œ«ÿ -1 
+if(allcleared-1>=1&&chall_type_plus[2]==0){//ÏûÑÏãúÏà´ÏûêÎ°ú Ïù∏Ìï¥ -1 
 chall_type_plus[2]+=1;
 chall_say();
 }
@@ -4628,7 +4576,7 @@ else if(puyocleared-1<=100&&allcleared-1>=3&&chall_type_plus[2]==3){
 	chall_say();
 }
 
-if(puyocleared-1>=100&&chall_type_plus[3]==0){//¿”Ω√º˝¿⁄∑Œ ¿Œ«ÿ -1 
+if(puyocleared-1>=100&&chall_type_plus[3]==0){//ÏûÑÏãúÏà´ÏûêÎ°ú Ïù∏Ìï¥ -1 
 chall_type_plus[3]+=1;
 chall_say();
 }
@@ -4756,7 +4704,7 @@ else if(puyocleared>=300&&option[0]==1&&diff_select==2&&chall_type_plus[10]==2){
 			j+=1;
 			Gotxy(j,15);
 				textcolor(BLACK,BLACK);
-				printf(" ");   //ø∑ ±Ù∫˝¿” πˆ±◊ «ÿ∞· ¿¸±Ó¡ˆ¿« πÊ¡ˆ  
+				printf(" ");   //ÏòÜ ÍπúÎπ°ÏûÑ Î≤ÑÍ∑∏ Ìï¥Í≤∞ Ï†ÑÍπåÏßÄÏùò Î∞©ÏßÄ  
 			Gotxy(j,0);
 				textcolor(BLACK,BLACK);
 				printf(" ");	
@@ -4788,7 +4736,7 @@ if(option[5]!=1)      //reverse
 textcolor(WHITE,LIGHTBLUE);
 else if(option[5]==1)      //reverse
 textcolor(WHITE,BROWN);
-printf("£–£’£Ÿ£œ£”     ");
+printf("Ôº∞ÔºµÔºπÔºØÔº≥     ");
 if(option[5]!=1)      //reverse
 textcolor(WHITE,BLUE);
 else if(option[5]==1)      //reverse
@@ -4799,7 +4747,7 @@ if(option[5]!=1)      //reverse
 textcolor(WHITE,LIGHTBLUE);
 else if(option[5]==1)      //reverse
 textcolor(WHITE,BROWN);
-printf("£√£Ã£≈£¡£“£≈£ƒ ");
+printf("Ôº£Ôº¨Ôº•Ôº°Ôº≤Ôº•Ôº§ ");
 if(option[5]!=1)      //reverse
 textcolor(WHITE,BLUE);
 else if(option[5]==1)      //reverse
@@ -4811,7 +4759,7 @@ if(option[5]!=1)      //reverse
 textcolor(WHITE,LIGHTBLUE);
 else if(option[5]==1)      //reverse
 textcolor(WHITE,BROWN);
-printf("£¡£Ã£Ã         ");
+printf("Ôº°Ôº¨Ôº¨         ");
 if(option[5]!=1)      //reverse
 textcolor(WHITE,BLUE);
 else if(option[5]==1)      //reverse
@@ -4822,7 +4770,7 @@ if(option[5]!=1)      //reverse
 textcolor(WHITE,LIGHTBLUE);
 else if(option[5]==1)      //reverse
 textcolor(WHITE,BROWN);
-printf("£√£Ã£≈£¡£“£≈£ƒ ");
+printf("Ôº£Ôº¨Ôº•Ôº°Ôº≤Ôº•Ôº§ ");
 if(option[5]!=1)      //reverse
 textcolor(WHITE,BLUE);
 else if(option[5]==1)      //reverse
@@ -4834,7 +4782,7 @@ if(option[5]!=1)      //reverse
 textcolor(WHITE,LIGHTBLUE);
 else if(option[5]==1)      //reverse
 textcolor(WHITE,BROWN);
-printf("£Õ£¡£ÿ         ");
+printf("Ôº≠Ôº°Ôº∏         ");
 if(option[5]!=1)      //reverse
 textcolor(WHITE,BLUE);
 else if(option[5]==1)      //reverse
@@ -4845,7 +4793,7 @@ if(option[5]!=1)      //reverse
 textcolor(WHITE,LIGHTBLUE);
 else if(option[5]==1)      //reverse
 textcolor(WHITE,BROWN);
-printf("£√£»£¡£…£Œ     ");
+printf("Ôº£Ôº®Ôº°Ôº©ÔºÆ     ");
 if(option[5]!=1)      //reverse
 textcolor(WHITE,BLUE);
 else if(option[5]==1)      //reverse
@@ -4857,7 +4805,7 @@ if(option[5]!=1)      //reverse
 textcolor(WHITE,BROWN);
 else if(option[5]==1)      //reverse
 textcolor(WHITE,LIGHTBLUE);
-printf("£‘£œ£‘£¡£Ã     ");
+printf("Ôº¥ÔºØÔº¥Ôº°Ôº¨     ");
 if(option[5]!=1)      //reverse
 textcolor(WHITE,BROWN);
 else if(option[5]==1)      //reverse
@@ -4868,7 +4816,7 @@ if(option[5]!=1)      //reverse
 textcolor(WHITE,BROWN);
 else if(option[5]==1)      //reverse
 textcolor(WHITE,LIGHTBLUE);
-printf("£”£√£œ£“£≈     ");
+printf("Ôº≥Ôº£ÔºØÔº≤Ôº•     ");
 
 if(diff_select%3==0){
 fin.open("score1.txt");
@@ -5107,7 +5055,7 @@ Sleep(250);
 if(kbhit()){
 	but=_getch();
 if(but=='q'){
-	if(op_select%OPTYPE==0){                          //Ω∫ƒ⁄æÓ ±‚∑œ 
+	if(op_select%OPTYPE==0){                          //Ïä§ÏΩîÏñ¥ Í∏∞Î°ù 
 textcolor(DARKGRAY,BLACK);
 Gotxy(17,2);
 printf("                              ");
@@ -5119,7 +5067,7 @@ textcolor(WHITE,BLACK);
 Gotxy(22,2);
 printf("Enter : Record");
 textcolor(WHITE,BLACK);
-Gotxy(17,2);            // name ¿‘∑¬  
+Gotxy(17,2);            // name ÏûÖÎ†•  
 
 if(score>maxscore1){  
 	printf("   NAME : ");
@@ -5235,7 +5183,7 @@ Sleep(250);
 if(kbhit()){
 	but=_getch();
 if(but=='q'){
-	if(op_select%OPTYPE==0){                          //Ω∫ƒ⁄æÓ ±‚∑œ 
+	if(op_select%OPTYPE==0){                          //Ïä§ÏΩîÏñ¥ Í∏∞Î°ù 
 textcolor(DARKGRAY,BLACK);
 Gotxy(17,2);
 printf("                              ");
@@ -5247,7 +5195,7 @@ textcolor(WHITE,BLACK);
 Gotxy(22,2);
 printf("Enter : Record");
 textcolor(WHITE,BLACK);
-Gotxy(17,2);            // name ¿‘∑¬  
+Gotxy(17,2);            // name ÏûÖÎ†•  
 
 if(score>maxscore6){
 	printf("   NAME : ");
@@ -5363,7 +5311,7 @@ Sleep(250);
 if(kbhit()){
 	but=_getch();
 if(but=='q'){
-	if(op_select%OPTYPE==0){                          //Ω∫ƒ⁄æÓ ±‚∑œ 
+	if(op_select%OPTYPE==0){                          //Ïä§ÏΩîÏñ¥ Í∏∞Î°ù 
 textcolor(DARKGRAY,BLACK);
 Gotxy(17,2);
 printf("                              ");
@@ -5375,7 +5323,7 @@ textcolor(WHITE,BLACK);
 Gotxy(22,2);
 printf("Enter : Record");
 textcolor(WHITE,BLACK);
-Gotxy(17,2);            // name ¿‘∑¬  
+Gotxy(17,2);            // name ÏûÖÎ†•  
 
 if(score>maxscore11){
 	printf("   NAME : ");
@@ -5489,8 +5437,8 @@ exit(0);
 	}         	
 	
 	
-            //¡æ∑· ∞®¡ˆ 
-	                                       //¡æ∑· ≥° 
+            //Ï¢ÖÎ£å Í∞êÏßÄ 
+	                                       //Ï¢ÖÎ£å ÎÅù 
 ///////////////////////////////////////////////	
 	t1.join();
 	t2.join();
@@ -5500,3 +5448,4 @@ exit(0);
 
 	
 }
+
