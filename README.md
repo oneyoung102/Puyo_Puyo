@@ -1,2 +1,4 @@
 # Puyo_Puyo
-this repository includes the game program that I coded imitating "Puyo Puyo Tetris";
+> 본 파일은 <windows.h>를 포함하고 있어, windows 운영체제에서만 작동합니다.
+
+> **뿌요뿌요 태트리스**를 모방하여 만든 게임으로 원작에서는 찾을 수 없는 여러 모드들을 즐길 수 있습니다.
